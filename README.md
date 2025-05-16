@@ -1,16 +1,27 @@
 # web-app
-a) Name and Matric No of the group members.
-- Adli Bin Wahid
-- Nurul Nasreen Binti Abdul Malik (2217464)
-- Nur Amira Nabila Binti Mohd Ab Rahman (2220682)
-b) Title of the project.
-c) Introduction of the proposed web application.
-d) The objective of the proposed web application.
-e) Features and functionalities of the proposed web application.
-f) Include ERD for your database tables with relationship.
-g) A sequence diagram to represent the interaction of the proposed web application.
-h) References.
-i) For formatting and styling of your proposal via README.md file refer to Markdown
-syntax.
-j) Submit the URL of your GitHub README.md file to iTaleem and respect the
-deadline. 
+📘 Project Proposal README
+👥 Group Members
+Adli Bin Wahid
+
+Nurul Nasreen Binti Abdul Malik (2217464)
+
+Nur Amira Nabila Binti Mohd Ab Rahman (2220682)
+
+📌 Project Title
+(Insert the title of your project here)
+
+🧠 Introduction
+(Provide a brief overview of your proposed web application. What problem does it solve? Who are the target users?)
+
+🎯 Objectives
+(List the main objectives of your proposed web application. What do you hope to achieve with this project?)
+
+🛠️ Features & Functionalities
+Your web application will include the following features:
+
+Feature 1: (Describe the feature briefly)
+
+Feature 2: (Describe the feature briefly)
+
+Feature 3: (Describe the feature briefly)
+(Add more as needed)
