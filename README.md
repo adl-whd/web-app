@@ -1,6 +1,6 @@
-# 🏨 Swift Retreat – Hotel Booking Management System
+# 🏨 Swift Retreat – Shariah-Compliant Hotel Booking Management System
 
-## 📘 Project Proposal Web App
+## 📘 Project Proposal 
 
 ---
 
@@ -14,15 +14,15 @@
 
 ## 📌 Project Title
 
-**Swift Retreat – Hotel Booking Management System**
+**Swift Retreat – Shariah-Compliant Hotel Booking Management System**
 
 ---
 
 ## 🧠 Introduction
 
-**Swift Retreat** is a web-based hotel booking management system developed to simplify and automate the reservation process for both hotel staff and customers. Traditional hotel booking methods often involve manual data entry, limited availability tracking, and poor communication between departments, leading to inefficiencies and customer dissatisfaction. Swift Retreat addresses these issues by providing a centralized platform where room availability, bookings, payments, and guest management are handled in real time.
+**Swift Retreat** is a web-based hotel booking management system designed to simplify and automate the reservation process while adhering to Shariah-compliant principles. In addition to solving common issues like double bookings, inefficient manual records, and lack of real-time updates, Swift Retreat incorporates Islamic values such as modesty, family-friendly accommodations, and optional amenities like prayer room access and halal-certified food services.
 
-Built using the **Model-View-Controller (MVC)** architecture, this system offers role-based access for administrators, staff, and customers. Customers can search for available rooms, make bookings, and manage their reservations online, while staff and administrators can oversee daily operations such as guest check-ins, room assignments, and invoice processing. With a user-friendly interface and responsive design, Swift Retreat aims to enhance operational efficiency and improve the overall guest experience, making it an ideal solution for small to mid-sized hotels.
+Built using the **Model-View-Controller (MVC)** architecture, this system offers role-based access for administrators, staff, and customers. Customers can browse for available rooms, filter for Shariah-compliant facilities, and make online reservations. Meanwhile, hotel staff and administrators can manage bookings, room statuses, and guest check-ins/check-outs. With responsive design and a user-friendly interface, Swift Retreat aims to enhance the hotel booking experience for all users, particularly those seeking services in line with Islamic values.
 
 ---
 
@@ -30,11 +30,11 @@ Built using the **Model-View-Controller (MVC)** architecture, this system offers
 
 The primary objectives of the proposed web application are:
 
-- To build a web-based hotel booking system using the MVC architecture.  
-- To enable customers to search, reserve, and manage hotel bookings online.  
+- To develop a web-based hotel booking system that is Shariah-compliant and built using MVC architecture.  
+- To enable customers to search, reserve, and manage bookings online, including filtering for Islamic-friendly features.  
 - To help hotel administrators manage room availability, pricing, and customer data in real time.  
-- To improve operational efficiency and reduce manual errors in the booking process.  
-- To provide secure and role-based access for admins, staff, and customers.
+- To promote Islamic values in hospitality by offering halal food, Qibla direction, and family-oriented services.  
+- To improve operational efficiency and reduce manual errors in the booking process.
 
 ---
 
@@ -45,43 +45,52 @@ Our web application will include the following features:
 ### ✅ Core Features
 
 **Feature 1: Online Room Booking**  
-- Customers can browse available rooms based on dates, view room details, and make instant bookings.  
-- Room availability is updated in real time to prevent double bookings.
+- Customers can browse available rooms by date and room type, with real-time availability updates.  
+- Option to filter rooms with Shariah-compliant features such as prayer mats, Qibla direction, or alcohol-free policies.
 
 **Feature 2: User Roles and Authentication**  
-- Secure login system with role-based access for Admin, Staff, and Customer.  
-- Each role has a customized interface and permissions.
+- Secure login system with role-based access for Admin, Staff, and Customers.  
+- Different dashboards for each role to maintain security and organization.
 
 **Feature 3: Check-In and Check-Out Management**  
-- Staff can manage and update the check-in/check-out status of guests.  
-- System tracks current and upcoming reservations.
+- Staff can manage guest check-in and check-out with proper status updates.  
+- Admins can monitor daily occupancy.
 
 **Feature 4: Payment and Invoice System**  
-- Customers can view pricing, make payments, and download invoices.  
-- Admins can monitor completed transactions and outstanding balances.
+- Customers can make online payments and download official invoices.  
+- Admins can view completed transactions and generate financial summaries.
 
 **Feature 5: Admin Room & Staff Management**  
-- Admins can add/edit/delete room details, manage pricing, and assign staff roles.  
-- System dashboard shows booking summaries and hotel performance metrics.
+- Admins can add or remove rooms, manage pricing, assign staff, and track performance.  
+- Rooms can be labeled as Shariah-compliant for customer awareness.
 
 ---
 
 ### ✨ Additional Features
 
-- **Email Notifications**  
-  Customers receive confirmation emails after successful bookings and payments.
+- **Shariah-Compliant Filters**  
+  Rooms labeled as "Alcohol-Free," "Family Only," or "Prayer Facility Available."
 
-- **Responsive User Interface**  
-  The application is optimized for desktops, tablets, and mobile devices.
+- **Halal Food Service Info**  
+  Option to display halal dining availability or nearby halal-certified restaurants.
+
+- **Prayer Facilities Information**  
+  Customers can check if prayer rooms, prayer mats, or Qibla directions are available.
+
+- **Email Notifications**  
+  Customers receive booking confirmations, check-in reminders, and invoice copies.
+
+- **Responsive Design**  
+  Mobile-friendly layout for ease of use across all devices.
 
 - **Booking History**  
-  Customers can view past and upcoming bookings in their profile dashboard.
+  Customers can view and manage their current and previous bookings.
 
-- **Search & Filter Options**  
-  Easily search rooms by type, price, or availability.
+- **Search & Filter**  
+  Filter by date, price, room type, and Shariah-compliant attributes.
 
 - **Staff Task List**  
-  Staff members can view assigned rooms and manage daily operational tasks.
+  Staff can view daily assignments such as room service, cleaning, and guest requests.
 
 ---
 
