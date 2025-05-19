@@ -1,4 +1,4 @@
-# 🏨 Swift Retreat – Shariah-Compliant Hotel Booking Management System
+# 🏨 Swift Retreat – Hotel Booking Management System
 
 ## 📘 Project Proposal 
 
@@ -14,7 +14,7 @@
 
 ## 📌 Project Title
 
-**Swift Retreat – Shariah-Compliant Hotel Booking Management System**
+**Swift Retreat – Hotel Booking Management System**
 
 ---
 
