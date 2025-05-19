@@ -1,6 +1,6 @@
 # 🏨 Swift Retreat – Hotel Booking Management System
 
-## 📘 Project Proposal README
+## 📘 Project Proposal Web App
 
 ---
 
