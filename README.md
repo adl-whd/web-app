@@ -9,6 +9,8 @@
 - **Adli Bin Wahid** (2211623)  
 - **Nurul Nasreen Binti Abdul Malik** (2217464)  
 - **Nur Amira Nabila Binti Mohd Ab Rahman** (2220682)
+- **Nur Faizah Binti Omar** (2226856)
+- **Farah Binti Mazlan** (2220338)
 
 ---
 
