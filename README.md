@@ -95,6 +95,9 @@ Our web application will include the following features:
   Staff can view daily assignments such as room service, cleaning, and guest requests.
 
 ---
+ER Diagram
+
+![ER Diagram](https://github.com/user-attachments/assets/718e1c1d-0819-4493-a966-8f899b01fe31)
 
 
 
