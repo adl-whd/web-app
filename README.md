@@ -97,7 +97,6 @@ Our web application will include the following features:
 ---
 ER Diagram
 
-![ER_updated](https://github.com/user-attachments/assets/4e474ab4-941d-4757-8b9b-93afb0169aab)
 
 
 
