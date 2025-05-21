@@ -97,6 +97,9 @@ Our web application will include the following features:
 ---
 ER Diagram
 
+![ER Diagram_Swift Hotel](https://github.com/user-attachments/assets/b6964da5-85c3-478b-b530-7dcf78debdd3)
+
+
 
 
 
