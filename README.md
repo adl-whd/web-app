@@ -100,7 +100,6 @@ ER Diagram
 ![ER_Swift](https://github.com/user-attachments/assets/77dc195d-6c86-4d3a-a178-9fcfb8e17126)
 
 
-![ER Diagram_Swift Hotel](https://github.com/user-attachments/assets/cb800a57-891b-4acd-bd5f-60915cceeea3)
 
 
 
