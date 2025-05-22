@@ -22,7 +22,7 @@
 
 ## 📌 Project Video Proposal
 
-[**Swift Retreat – Hotel Booking Management System**](https://youtu.be/4DMGfnkuceU?si=OT1bRMcac2-MeX0n)
+
 
 ---
 
