@@ -119,13 +119,11 @@ landing page
 
 payment page
 
-![Screenshot 2025-05-22 224406](https://github.com/user-attachments/assets/6bf74c7d-fcb9-4889-aa30-c798fb3043d4)
+![Screenshot 2025-05-22 225719](https://github.com/user-attachments/assets/f97110de-a0bb-47dd-8532-ed087f511b90)
 
 booking management page
 
 ![Screenshot 2025-05-22 224455](https://github.com/user-attachments/assets/be33b35d-0752-45ba-80b2-3e254237e3c4)
-
-
 
 **Admin's side**
 dashboard
