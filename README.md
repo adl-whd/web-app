@@ -20,6 +20,12 @@
 
 ---
 
+## 📌 Project Video Proposal
+
+[**Swift Retreat – Hotel Booking Management System**](https://youtu.be/4DMGfnkuceU?si=OT1bRMcac2-MeX0n)
+
+---
+
 ## 🧠 Introduction
 
 **Swift Retreat** is a web-based hotel booking management system designed to simplify and automate the reservation process while adhering to Shariah-compliant principles. In addition to solving common issues like double bookings, inefficient manual records, and lack of real-time updates, Swift Retreat incorporates Islamic values such as modesty, family-friendly accommodations, and optional amenities like prayer room access and halal-certified food services.
