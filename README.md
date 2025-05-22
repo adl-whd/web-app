@@ -108,36 +108,48 @@ Sequence Diagram
 Screenshot of website mockup
 
 user's side
+
 ![Screenshot 2025-05-22 224640](https://github.com/user-attachments/assets/a0c816ca-b904-46a1-bd07-d32e55d4d938)
 ![Screenshot 2025-05-22 224647](https://github.com/user-attachments/assets/0d396a42-e319-4f15-8f39-2e39445f3f17)
+
 login and register page
 
 ![Landing page](https://github.com/user-attachments/assets/30bbf602-842d-4729-916a-e7ddcf6310fe)
+
 landing page
 
 ![Screenshot 2025-05-22 224406](https://github.com/user-attachments/assets/6bf74c7d-fcb9-4889-aa30-c798fb3043d4)
+
 payment page
 
 ![Screenshot 2025-05-22 224455](https://github.com/user-attachments/assets/be33b35d-0752-45ba-80b2-3e254237e3c4)
+
 booking management page
 
 admin's side
+
 ![Dashboard](https://github.com/user-attachments/assets/cb305066-0b90-4fae-a95a-732da7953230)
+
 dashboard
 
 ![Guests](https://github.com/user-attachments/assets/d46120ed-f65e-4d90-bdb1-753233054ac3)
+
 guestlist page
 
 ![Room](https://github.com/user-attachments/assets/e6b410f6-86df-421e-9bbf-35231340ba6c)
+
 room management page
 
 ![Deals](https://github.com/user-attachments/assets/42f9a558-84c9-4b1b-95f9-99ba0bd42ba8)
+
 deals management page
 
 ![Rate](https://github.com/user-attachments/assets/76c281f8-543d-4d80-97ea-7fbe8bc2d3d2)
+
 rate page
 
 ![Screenshot 2025-05-22 225145](https://github.com/user-attachments/assets/6ba18fe2-4d92-46b6-8daf-a2be14f9c23e)
+
 front desk customer management page
 
 
