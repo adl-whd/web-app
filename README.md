@@ -99,6 +99,15 @@ ER Diagram
 
 ![ER_Diagram_Swift](https://github.com/user-attachments/assets/9a9e1461-45c9-41bf-b000-12846883e031)
 
+Sequence Diagram
+
+![SD - Guest](https://github.com/user-attachments/assets/cf3e22e8-6ab5-4b92-aa58-7b12acfc4d03)
+
+![SD - Staff](https://github.com/user-attachments/assets/c642ccf6-e42c-4cd9-8a60-162d25a4637e)
+
+![SD - Admin](https://github.com/user-attachments/assets/d0c79f61-a8fd-41af-b48e-f3a278e34bf0)
+
+
 
 
 
