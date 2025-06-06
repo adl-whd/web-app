@@ -1,8 +1,5 @@
 {
-<<<<<<< HEAD
-=======
     "$schema": "https://json.schemastore.org/package.json",
->>>>>>> cf7e21540a275c64757188c9e03ff58bf93f87ea
     "private": true,
     "type": "module",
     "scripts": {
