@@ -1,108 +1,58 @@
-@extends('master.layout')
+@extends('layouts.app') {{-- Assuming you have a base layout --}}
+
 @section('content')
-        <!--================Banner Area =================-->
-        <section class="banner_area" id="home">
-            <div class="booking_table d_flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h6>Away from monotonous life</h6>
-						<h2>Hotel Hebat</h2>
-						<p>Hotel bersih, aman, nyaman, sehat<br> Harga yang terjangkau anda dapat menginap disini</p>
-						<a href="#types" class="btn theme_btn button_hover">Get Started</a>
-					</div>
-				</div>
-            </div>
-            <div class="hotel_booking_area position">
-                <div class="container">
-                    <div class="hotel_booking_table">
-                        <div class="col-md-12">
-                            <center>
+<div class="max-w-4xl mx-auto p-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b pb-4 mb-6">
+        <div class="text-2xl font-bold text-blue-700">Swift Retreat</div>
+        <div class="flex space-x-6 text-gray-600">
+            <a href="#" class="font-medium">Book A Room</a>
+            <a href="#" class="font-medium">My Bookings</a>
+            <a href="#" class="font-medium">Shariah Facilities</a>
+            <a href="#" class="font-medium">Support</a>
+            <div class="w-6 h-6 rounded-full bg-gray-400"></div> <!-- Avatar -->
+        </div>
+    </div>
 
-                                <h2>Enjoy Your<br> Holiday With Us</h2>
-                            </center>
-                        </div>
+    <!-- Payment Method -->
+    <div class="mb-6">
+        <h2 class="text-xl font-semibold mb-3">Payment Method</h2>
+        <form method="POST" action="{{ route('payment.process') }}">
+            @csrf
+            <div class="bg-gray-100 rounded-lg p-4 flex flex-col space-y-4 md:flex-row md:justify-between">
+                <!-- Payment Options -->
+                <div class="flex flex-col space-y-2">
+                    <label class="flex items-center space-x-2">
+                        <input type="radio" name="payment_method" value="online_banking" class="accent-blue-600">
+                        <span>Online Banking</span>
+                    </label>
+                    <label class="flex items-center space-x-2">
+                        <input type="radio" name="payment_method" value="e_wallet" class="accent-blue-600">
+                        <span>E-Wallet</span>
+                    </label>
+                    <label class="flex items-center space-x-2">
+                        <input type="radio" name="payment_method" value="card" class="accent-blue-600">
+                        <span>Debit/Credit Card</span>
+                    </label>
+                </div>
 
-                    </div>
+                <!-- Summary -->
+                <div class="text-right space-y-1">
+                    <div>Subtotal: <strong>RM 642.00</strong></div>
+                    <div>Service Tax (8%): <strong>RM 51.36</strong></div>
+                    <div>Tourism Tax: <strong>RM 10.00</strong></div>
+                    <hr class="my-1">
+                    <div class="text-lg font-bold">Total (RM): 703.36</div>
                 </div>
             </div>
-        </section>
-        <!--================Banner Area =================-->
 
-        <!--================ Accomodation Area  =================-->
-        {{-- <section class="accomodation_area section_gap" id="types">
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Hotel Types</h2>
-                </div>
-                <div class="row mb_30">
-                    @foreach ($roomTypes as $item)
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="accomodation_item text-center">
-                                <div class="hotel_img">
-                                    <a href="{{ route('detail.room', $item->id) }}">
-                                        <img src="{{ asset('images/tipekamar/'.$item->foto) }}" width="250px" alt="">
-                                    </a>
-                                    <a href="{{ route('detail.room', $item->id) }}" class="btn theme_btn button_hover">Book Now</a>
-                                </div>
-                                <a href="{{ route('detail.room', $item->id) }}"><h4 class="sec_h4">{{ $item->name }}</h4></a>
-                                <a href="{{ route('detail.room', $item->id) }}">
-                                    <h5>@currency($item->price)<small>/night</small></h5>
-                                </a>
-                                <p>Kamar Tersedia : {{ $item->getTotalRooms->count() }}</p>
-
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+            <!-- Pay Button -->
+            <div class="mt-6 text-right">
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+                    Pay
+                </button>
             </div>
-        </section> --}}
-        <!--================ Accomodation Area  =================-->
-
-
-    <!--================ Facilities Area  =================-->
-    {{-- <section class="facilities_area section_gap" id="facilities">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">
-            </div>
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_w">Hotel Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
-                <div class="row mb_30">
-                    @foreach ($hotelFacilities as $item)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-star-empty"></i>{{ $item->facility_name }}</h4>
-                            <p>{{ $item->detail }}</p>
-                        </div>
-                    </div>
-                    @endforeach
-
-
-                </div>
-            </div>
-        </section> --}}
-        <!--================ Facilities Area  =================-->
-
-        <!--================ About History Area  =================-->
-        <section class="about_history_area section_gap" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">About Us</h2>
-                            <p>Modern accommodations, topped off with an infusion of rustic charm and a residential feel. Combining comfort and functionality, simple’s design concept uses warm, rich colors to offer comfort in every room.  Accents of warm autumnal fabrics and soft orange hues promote relaxation like spiced pumpkin, tangerine and amber, while modern grays create an understated cool elegance.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="{{ asset('template/image/about_bg.jpg') }}" alt="img">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--================ About History Area  =================-->
-
-
-
+        </form>
+    </div>
+</div>
 @endsection

@@ -33,9 +33,10 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+           <main>
+              @yield('content')
+           </main>
+
         </div>
 
         @stack('modals')
