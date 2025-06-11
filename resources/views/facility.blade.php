@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,36 @@
             background-color: #f8f9fa;
             display: flex;
             min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            min-height: 100vh;
+            order: 1;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #34495e;
+            text-align: center;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .sidebar-subtitle {
+            font-size: 12px;
+            color: #bdc3c7;
+            margin: 5px 0 0 0;
+        }
+
+        .sidebar-menu {
+            padding: 20px 0;
         }
         .menu-item {
             padding: 12px 20px;
@@ -30,10 +61,10 @@
         }
 
         .container {
-            margin-left: 250px;
             flex: 1;
             background: white;
             min-height: 100vh;
+            order: 2;
         }
 
         .header {
@@ -301,7 +332,25 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="sidebar-title">Swift Retreat</h3>
+            <p class="sidebar-subtitle">Hotel Management</p>
+        </div>
+        <div class="sidebar-menu">
+            <div class="menu-item">Dashboard</div>
+            <div class="menu-item">Reservations</div>
+            <div class="menu-item">Guest</div>
+            <div class="menu-item">Rooms</div>
+            <div class="menu-item">Staff</div>
+            <div class="menu-item">Rate</div>
+            <div class="menu-item active">Setting</div>
+        </div>
+    </div>
+
     <div class="container">
+
         <!-- Header Section -->
         <div class="header">
             <div class="logo">
@@ -582,10 +631,12 @@
             closeModal();
         }
     </script>
+
+
+                <!-- Pagination -->
+                <div class="flex justify-end mt-4">
+                </div>
+            </div>
+        </div>
 </body>
 </html>
-
-
-
-
-
