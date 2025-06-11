@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-/.phpunit.cache
-/node_modules
-=======
 *.log
 .DS_Store
 .env
@@ -16,36 +12,18 @@
 /.vscode
 /.zed
 /auth.json
->>>>>>> cf7e21540a275c64757188c9e03ff58bf93f87ea
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
 /storage/pail
 /vendor
-<<<<<<< HEAD
-.env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/auth.json
-/.fleet
-/.idea
-/.nova
-/.vscode
-/.zed
-=======
 Homestead.json
 Homestead.yaml
 npm-debug.log
 Thumbs.db
 yarn-error.log
->>>>>>> cf7e21540a275c64757188c9e03ff58bf93f87ea
+node_modules
 node_modules
 node_modules
 node_modules
