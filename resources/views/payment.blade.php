@@ -175,7 +175,7 @@ $(document).ready(function() {
 
     // Redirect after modal is closed
     $(modalElement).on('hidden.bs.modal', function () {
-        window.location.href = '/'; // You can change this route later
+        window.location.href = '/'; 
     });
 
     $form[0].reset();
