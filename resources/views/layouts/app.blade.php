@@ -17,6 +17,8 @@
         <!-- Styles -->
         @livewireStyles
     </head>
+
+
     <body class="font-sans antialiased">
         <x-banner />
 
@@ -33,9 +35,15 @@
             @endif
 
             <!-- Page Content -->
-           <main>
-              @yield('content')
-           </main>
+           <div class="flex min-h-screen">
+        {{-- Sidebar --}}
+        @include('layouts.sidebar')
+
+        {{-- Main Content --}}
+        <div class="flex-1 p-6 overflow-y-auto">
+            @yield('content')
+        </div>
+    </div>
 
         </div>
 
