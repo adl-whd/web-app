@@ -9,6 +9,6 @@ class GuestController extends Controller
     public function index()
     {
         // Return a view or some logic
-        return view('guest.index');
+        return view('guest');
     }
 }
