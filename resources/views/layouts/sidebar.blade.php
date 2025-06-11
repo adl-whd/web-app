@@ -24,7 +24,7 @@
             </a>
         </li>
         <li>
-            <a class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2">
+            <a href="{{ route('room') }}" class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2">
                 {{-- <a href="{{ route('rooms') }}" class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2"> --}}
                 <i class="fas fa-door-open"></i>
                 <span>Rooms</span>
