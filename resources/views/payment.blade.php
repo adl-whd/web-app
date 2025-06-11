@@ -16,6 +16,7 @@
         </label>
 
         <button type="submit" class="btn btn-primary">Proceed with Payment</button>
+
     </form>
 </div>
 @endsection

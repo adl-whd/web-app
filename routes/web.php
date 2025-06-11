@@ -9,8 +9,8 @@ Route::get('/', function () {
 
 // Payment Routes
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-Route::post('/process-payment', [PaymentController::class, 'store'])->name('payment.process');
-Route::get('/payment/{payment}', [PaymentController::class, 'show'])->name('payment.show');
+Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
+Route::get('/payment/success/{id}', [PaymentController::class, 'success'])->name('payment.success');
 
 // Authenticated Routes (Jetstream)
 Route::middleware([
