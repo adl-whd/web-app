@@ -26,38 +26,55 @@
 
       <div class="booking-form">
         <form action="/book" method="post">
-          <div class="row gy-4">
-            <div class="col-md-3">
-              <label for="check-in">Check-In</label>
-              <input type="text" id="check-in" name="check-in" class="form-control datepicker" placeholder="Check-In Date" required>
-            </div>
-            <div class="col-md-3">
-              <label for="check-out">Check-Out</label>
-              <input type="text" id="check-out" name="check-out" class="form-control datepicker" placeholder="Check-Out Date" required>
-            </div>
-            <div class="col-md-2">
-              <label for="adults">Adults</label>
-              <select id="adults" name="adults" class="form-control" required>
+    @csrf
+    <div class="row gy-4">
+        <div class="col-md-2">
+            <label for="check-in">Check-In</label>
+            <input type="text" id="check-in" name="check_in" class="form-control datepicker" placeholder="Select Date" required>
+        </div>
+        <div class="col-md-2">
+            <label for="check-out">Check-Out</label>
+            <input type="text" id="check-out" name="check_out" class="form-control datepicker" placeholder="Select Date" required>
+        </div>
+        <div class="col-md-2">
+            <label for="room-type">Room Type</label>
+            <select id="room-type" name="room_type" class="form-control" required>
+                <option value="Deluxe-Room" selected>Deluxe Room</option>
+                <option value="Executive-Suite">Executive Suite</option>
+                <option value="Presidential-Suite">Presidential Suite</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="adults">Adults</label>
+            <select id="adults" name="adult" class="form-control" required>
                 <option value="1">1</option>
                 <option value="2" selected>2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="children">Children</label>
-              <select id="children" name="children" class="form-control">
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="children">Children</label>
+            <select id="children" name="children" class="form-control">
                 <option value="0" selected>0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-              </select>
-            </div>
-            <div class="col-md-2 d-flex align-items-end">
-              <button type="submit" class="btn-check">Check Availability</button>
-            </div>
-          </div>
-        </form>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+            <label for="phone_no">Phone Number</label>
+            <input type="tel" id="phone_no" name="phone_no" class="form-control" required>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Check Availability</button>
+        </div>
+    </div>
+</form>
       </div>
     </div>
   </section><!-- /Booking Form Section -->
@@ -326,5 +343,23 @@
   </section><!-- /Contact Section -->
 
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Configure Flatpickr for check-in
+    flatpickr("#check-in", {
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr, instance) {
+            // When check-in date is selected, set minDate for check-out
+            checkOutPicker.set("minDate", dateStr);
+        }
+    });
 
+    // Configure Flatpickr for check-out
+    const checkOutPicker = flatpickr("#check-out", {
+        minDate: new Date().fp_incr(1), // Tomorrow
+        dateFormat: "Y-m-d"
+    });
+});
+</script>
 @endsection
