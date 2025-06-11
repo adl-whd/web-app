@@ -2,12 +2,27 @@
 
 @section('content')
 <div class="container">
-    <h1>Room Management</h1>
-    <a href="{{ route('room.create') }}" class="btn btn-primary mb-3">Add Room</a>
 
+<!-- Main Content -->
+    <main class="flex-1 p-6">
+      <div class="flex justify-between items-center mb-6">
+      </div>
 
-    <table class="table table-bordered">
-        <thead>
+      <h2 class="text-xl font-semibold mb-4">Room</h2>
+
+      <!-- Filters -->
+      <div class="flex space-x-4 mb-4">
+        <button class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">All room(100)</button>
+        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full">Available room(20)</button>
+        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full">Booked(80)</button>
+        <a href="{{ route('room.create') }}" class="ml-auto px-4 py-2 bg-blue-600 text-white rounded-lg">Add room</a>
+      </div>
+
+    <!-- Room Table -->
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="min-w-full text-sm text-left">
+        <thead class="bg-gray-100">
+            <tbody>
             <tr>
                 <th>Room Number</th>
                 <th>Bed Type</th>
@@ -16,6 +31,7 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+            </tbody>
         </thead>
         <tbody>
             @foreach($room as $room)
@@ -50,6 +66,12 @@
             @endforeach
         </tbody>
     </table>
-    {{ $room->links() }}
+    {{-- {{ $room->links() }} --}}
 </div>
 @endsection
+
+@if(session('success'))
+    <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
