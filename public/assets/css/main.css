@@ -18,7 +18,7 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
@@ -1620,6 +1620,11 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
+
+/*--------------------------------------------------------------
+# Rooms Section
+--------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------
 # Starter Section Section
