@@ -150,31 +150,38 @@ $(document).ready(function() {
         url: $form.attr('action'),
         method: 'POST',
         data: $form.serialize(),
-        success: function(response) {
-            $('#transaction-id').text(response.payment_id);
+       success: function(response) {
+    $('#transaction-id').text(response.payment_id);
 
-            if (response.has_booking) {
-                $('#booking-info').html(`
-                    <div class="alert alert-info mt-3">
-                        <p class="mb-1"><strong>Booking Details:</strong></p>
-                        <p class="mb-1">Hotel: ${$form.find('input[name="hotel_name"]').val()}</p>
-                        <p class="mb-1">Room Type: ${$form.find('input[name="room_type"]').val()}</p>
-                    </div>
-                `);
-            } else {
-                $('#booking-info').html(`
-                    <div class="alert alert-info mt-3">
-                        <p>No booking associated with this payment.</p>
-                    </div>
-                `);
-            }
+    if (response.has_booking) {
+        $('#booking-info').html(`
+            <div class="alert alert-info mt-3">
+                <p class="mb-1"><strong>Booking Details:</strong></p>
+                <p class="mb-1">Hotel: ${$form.find('input[name="hotel_name"]').val()}</p>
+                <p class="mb-1">Room Type: ${$form.find('input[name="room_type"]').val()}</p>
+            </div>
+        `);
+    } else {
+        $('#booking-info').html(`
+            <div class="alert alert-info mt-3">
+                <p>No booking associated with this payment.</p>
+            </div>
+        `);
+    }
 
-            const modal = new bootstrap.Modal(document.getElementById('successModal'));
-modal.show();
+    const modalElement = document.getElementById('successModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
 
-            $form[0].reset();
-            $('#pay-button').html('Pay Now').prop('disabled', false);
-        },
+    // Redirect after modal is closed
+    $(modalElement).on('hidden.bs.modal', function () {
+        window.location.href = '/'; // You can change this route later
+    });
+
+    $form[0].reset();
+    $('#pay-button').html('Pay Now').prop('disabled', false);
+}
+        ,
         error: function(xhr) {
             alert('Payment failed: ' + (xhr.responseJSON?.message || 'Please check your details and try again.'));
             $('#pay-button').html('Pay Now').prop('disabled', false);
