@@ -11,7 +11,9 @@ Route::get('/', function () {
 });
 
 // Payment Routes
-Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+
+Route::get('/payment', [BookingController::class, 'index'])->name('payment.index');
+//Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
 Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
 Route::get('/payment/success/{id}', [PaymentController::class, 'success'])->name('payment.success');
 

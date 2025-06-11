@@ -15,4 +15,9 @@ class Payment extends Model
         'method',
         'status',
     ];
+    public function booking()
+{
+    return $this->hasOne(Booking::class);
+}
+
 }

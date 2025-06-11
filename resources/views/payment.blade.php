@@ -1,6 +1,7 @@
 @extends('master.layout')
 
 @section('content')
+
 <main class="main">
 
   <!-- Payment Section -->
@@ -24,9 +25,9 @@
                 <input type="hidden" name="total_amount" value="{{ $bookingDetails['total'] }}">
                 <input type="hidden" name="has_booking" value="{{ $bookingDetails['has_booking'] ? 1 : 0 }}">
 
-                @if(isset($bookingDetails['has_booking']) && $bookingDetails['has_booking'])
-                    <input type="hidden" name="hotel_name" value="{{ $bookingDetails['hotel_name'] }}">
-                    <input type="hidden" name="room_type" value="{{ $bookingDetails['room_type'] }}">
+                @if($bookingDetails['has_booking'])
+                  <input type="hidden" name="hotel_name" value="{{ $bookingDetails['hotel_name'] }}">
+                  <input type="hidden" name="room_type" value="{{ $bookingDetails['room_type'] }}">
                 @endif
 
                 <div class="row mb-3">
@@ -35,8 +36,8 @@
                     <input type="text" class="form-control" id="card-name" name="card_name" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="card-number" class="form-label">Card Number</label>
-                    <input type="text" class="form-control" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" required>
+                    <label for="card-number" class="form-label">Card Number (No spaces)</label>
+                    <input type="text" class="form-control" id="card-number" name="card_number" placeholder="1234567890123456" required>
                   </div>
                 </div>
 
@@ -82,21 +83,21 @@
               <h4>Payment Summary</h4>
             </div>
             <div class="card-body">
-              @if(isset($bookingDetails['has_booking']) && $bookingDetails['has_booking'])
-                    <div class="hotel-info mb-4">
-                    <h5>{{ $bookingDetails['hotel_name'] }}</h5>
-                    <p class="text-muted">{{ $bookingDetails['room_type'] }}</p>
-                    <p><i class="bi bi-calendar"></i> Check-in: {{ $bookingDetails['check_in'] }}</p>
-                    <p><i class="bi bi-calendar"></i> Check-out: {{ $bookingDetails['check_out'] }}</p>
-                    <p><i class="bi bi-people"></i> {{ $bookingDetails['guests'] }}</p>
-                    </div>
-                  <hr>
+              @if($bookingDetails['has_booking'])
+                <div class="hotel-info mb-4">
+                  <h5>{{ $bookingDetails['hotel_name'] }}</h5>
+                  <p class="text-muted">{{ $bookingDetails['room_type'] }}</p>
+                  <p><i class="bi bi-calendar"></i> Check-in: {{ $bookingDetails['check_in'] }}</p>
+                  <p><i class="bi bi-calendar"></i> Check-out: {{ $bookingDetails['check_out'] }}</p>
+                  <p><i class="bi bi-people"></i> {{ $bookingDetails['guests'] }}</p>
+                </div>
+                <hr>
               @endif
 
               <div class="price-details">
                 <div class="d-flex justify-content-between fw-bold">
-                    <span>Amount to Pay</span>
-                    <span>${{ number_format($bookingDetails['total'] ?? 0, 2) }}</span>
+                  <span>Amount to Pay</span>
+                  <span>${{ number_format($bookingDetails['total'], 2) }}</span>
                 </div>
               </div>
             </div>
@@ -117,13 +118,13 @@
         <div class="modal-body text-center">
           <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
           <p class="mt-3">Your payment has been processed successfully.</p>
-          <p>Transaction ID: <span id="transaction-id" class="fw-bold"></span></p>
-          <div id="booking-info" class="mt-3">
-            <!-- Dynamic content will be inserted here -->
-          </div>
+          <!--p>Transaction ID: <span id="transaction-id" class="fw-bold"></span></p-->
+          <!--div id="booking-info" class="mt-3"-->
+            <!-- Dynamic content will be inserted here >
+          </div-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Continue</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Done</button>
         </div>
       </div>
     </div>
@@ -132,55 +133,55 @@
 </main>
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 @push('scripts')
 <script>
 $(document).ready(function() {
-    $('#payment-form').on('submit', function(e) {
-        e.preventDefault();
+   $('#payment-form').on('submit', function(e) {
+    e.preventDefault();
 
-        // Show loading state
-        $('#pay-button').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...').prop('disabled', true);
+    const $form = $(this); // ✅ Store the form reference
 
-        // Submit form via AJAX
-        $.ajax({
-            url: $(this).attr('action'),
-            method: 'POST',
-            data: $(this).serialize(),
-            success: function(response) {
-                // Show success modal
-                $('#transaction-id').text(response.payment_id);
+    $('#pay-button').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...').prop('disabled', true);
 
-                // Add booking info if exists
-                if (response.has_booking) {
-                    $('#booking-info').html(`
-                        <div class="alert alert-info mt-3">
-                            <p class="mb-1"><strong>Booking Details:</strong></p>
-                            <p class="mb-1">Hotel: ${$(this).find('input[name="hotel_name"]').val()}</p>
-                            <p class="mb-1">Room Type: ${$(this).find('input[name="room_type"]').val()}</p>
-                        </div>
-                    `);
-                } else {
-                    $('#booking-info').html(`
-                        <div class="alert alert-info mt-3">
-                            <p>No booking associated with this payment.</p>
-                        </div>
-                    `);
-                }
+    $.ajax({
+        url: $form.attr('action'),
+        method: 'POST',
+        data: $form.serialize(),
+        success: function(response) {
+            $('#transaction-id').text(response.payment_id);
 
-                $('#successModal').modal('show');
-
-                // Reset form and button
-                $('#payment-form')[0].reset();
-                $('#pay-button').html('Pay Now').prop('disabled', false);
-            },
-            error: function(xhr) {
-                // Show error message
-                alert('Payment failed: ' + (xhr.responseJSON?.message || 'Please check your details and try again.'));
-                $('#pay-button').html('Pay Now').prop('disabled', false);
+            if (response.has_booking) {
+                $('#booking-info').html(`
+                    <div class="alert alert-info mt-3">
+                        <p class="mb-1"><strong>Booking Details:</strong></p>
+                        <p class="mb-1">Hotel: ${$form.find('input[name="hotel_name"]').val()}</p>
+                        <p class="mb-1">Room Type: ${$form.find('input[name="room_type"]').val()}</p>
+                    </div>
+                `);
+            } else {
+                $('#booking-info').html(`
+                    <div class="alert alert-info mt-3">
+                        <p>No booking associated with this payment.</p>
+                    </div>
+                `);
             }
-        });
+
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+modal.show();
+
+            $form[0].reset();
+            $('#pay-button').html('Pay Now').prop('disabled', false);
+        },
+        error: function(xhr) {
+            alert('Payment failed: ' + (xhr.responseJSON?.message || 'Please check your details and try again.'));
+            $('#pay-button').html('Pay Now').prop('disabled', false);
+        }
     });
+});
+
 });
 </script>
 @endpush

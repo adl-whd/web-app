@@ -23,4 +23,9 @@ class booking extends Model
         'created_at',
         'updated_at'
     ];
+    public function payment()
+{
+    return $this->belongsTo(Payment::class);
+}
+
 }
