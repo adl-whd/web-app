@@ -9,13 +9,13 @@ class FacilityController extends Controller
 {
     public function index()
     {
-        $facilities = Facility::all();
-        return view('facilities.index', compact('facilities'));
+        $facility = Facility::all();
+        return view('facility', compact('facility'));
     }
 
     public function create()
     {
-        return view('facilities.create');
+        return view('facility.create');
     }
 
     public function store(Request $request)
@@ -28,13 +28,13 @@ class FacilityController extends Controller
         ]);
 
         Facility::create($validated);
-        return redirect()->route('facilities.index');
+        return redirect()->route('facility');
     }
 
     public function edit($id)
     {
         $facility = Facility::findOrFail($id);
-        return view('facilities.edit', compact('facility'));
+        return view('facility.edit', compact('facility'));
     }
 
     public function update(Request $request, $id)
@@ -48,13 +48,13 @@ class FacilityController extends Controller
 
         $facility = Facility::findOrFail($id);
         $facility->update($validated);
-        return redirect()->route('facilities.index');
+        return redirect()->route('facility');
     }
 
     public function destroy($id)
     {
         $facility = Facility::findOrFail($id);
         $facility->delete();
-        return redirect()->route('facilities.index');
+        return redirect()->route('facility');
     }
 }

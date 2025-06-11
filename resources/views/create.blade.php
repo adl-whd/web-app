@@ -1,4 +1,4 @@
-<form action="{{ route('facilities.store') }}" method="POST">
+<form action="{{ route('facility.store') }}" method="POST">
     @csrf
     <label for="room_number">Room Number</label>
     <input type="text" name="room_number" required>

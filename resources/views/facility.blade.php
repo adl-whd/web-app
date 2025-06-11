@@ -13,70 +13,6 @@
             display: flex;
             min-height: 100vh;
         }
-
-        .sidebar {
-            width: 250px;
-            background: #2c3e50;
-            color: white;
-            padding: 0;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 1px solid #34495e;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .sidebar-logo {
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar-logo::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: white;
-            border-radius: 50%;
-            top: 6px;
-            left: 8px;
-        }
-
-        .sidebar-logo::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: white;
-            border-radius: 50%;
-            top: 8px;
-            right: 6px;
-        }
-
-        .sidebar-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #3498db;
-        }
-
-        .sidebar-menu {
-            padding: 20px 0;
-        }
-
         .menu-item {
             padding: 12px 20px;
             cursor: pointer;
@@ -365,17 +301,6 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-logo"></div>
-            <div class="sidebar-title">Retreat Swift</div>
-        </div>
-        <div class="sidebar-menu">
-            <div class="menu-item active">Facility</div>
-        </div>
-    </div>
-
     <div class="container">
         <!-- Header Section -->
         <div class="header">
@@ -659,3 +584,8 @@
     </script>
 </body>
 </html>
+
+
+
+
+
