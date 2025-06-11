@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\FacilityController;
 
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,4 +26,3 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
