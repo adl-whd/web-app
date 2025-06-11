@@ -28,8 +28,8 @@ class bookingController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validated = $request->validate([
+{
+    $validated = $request->validate([
         'room_type' => 'required',
         'check_in' => 'required|date',
         'check_out' => 'required|date|after:check_in',
@@ -41,22 +41,48 @@ class bookingController extends Controller
 
     $roomNo = substr(strtoupper($validated['room_type']), 0, 3) . rand(100, 999);
 
-        $booking = new booking();
-        $booking->room_type = $validated['room_type'];
-        $booking->room_no = $roomNo;
-        $booking->check_in = $validated['check_in'];
-        $booking->check_out = $validated['check_out'];
-        $booking->adult = $validated['adult'];
-        $booking->children = $validated['children'] ?? 0;
-        $booking->first_name = $validated['first_name'];
-        $booking->phone_no = $validated['phone_no'];
-        $booking->created_at = now();
-        $booking->updated_at = now();
+    $booking = new booking();
+    $booking->room_type = $validated['room_type'];
+    $booking->room_no = $roomNo;
+    $booking->check_in = $validated['check_in'];
+    $booking->check_out = $validated['check_out'];
+    $booking->adult = $validated['adult'];
+    $booking->children = $validated['children'] ?? 0;
+    $booking->first_name = $validated['first_name'];
+    $booking->phone_no = $validated['phone_no'];
+    $booking->created_at = now();
+    $booking->updated_at = now();
+    $booking->save();
 
-        $booking->save();
+    // Calculate total amount (example calculation)
+    $roomPrices = [
+        'Deluxe-Room' => 199,
+        'Executive-Suite' => 349,
+        'Presidential-Suite' => 599
+    ];
 
-    return redirect('payment');
-    }
+    $nights = (strtotime($validated['check_out']) - strtotime($validated['check_in'])) / (60 * 60 * 24);
+    $subtotal = $roomPrices[$validated['room_type']] * $nights;
+    $tax = $subtotal * 0.1; // 10% tax
+    $total = $subtotal + $tax;
+
+    // Prepare booking details for payment page
+    $bookingDetails = [
+        'has_booking' => true,
+        'hotel_name' => 'Swift Retreat',
+        'room_type' => $validated['room_type'],
+        'check_in' => $validated['check_in'],
+        'check_out' => $validated['check_out'],
+        'guests' => $validated['adult'] . ' Adults' . ($validated['children'] > 0 ? ', ' . $validated['children'] . ' Children' : ''),
+        'room_price' => $roomPrices[$validated['room_type']],
+        'nights' => $nights,
+        'subtotal' => $subtotal,
+        'taxes' => $tax,
+        'total' => $total
+    ];
+
+    return view('payment', compact('bookingDetails'));
+}
 
     /**
      * Display the specified resource.

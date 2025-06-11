@@ -24,9 +24,9 @@
                 <input type="hidden" name="total_amount" value="{{ $bookingDetails['total'] }}">
                 <input type="hidden" name="has_booking" value="{{ $bookingDetails['has_booking'] ? 1 : 0 }}">
 
-                @if($bookingDetails['has_booking'])
-                  <input type="hidden" name="hotel_name" value="{{ $bookingDetails['hotel_name'] }}">
-                  <input type="hidden" name="room_type" value="{{ $bookingDetails['room_type'] }}">
+                @if(isset($bookingDetails['has_booking']) && $bookingDetails['has_booking'])
+                    <input type="hidden" name="hotel_name" value="{{ $bookingDetails['hotel_name'] }}">
+                    <input type="hidden" name="room_type" value="{{ $bookingDetails['room_type'] }}">
                 @endif
 
                 <div class="row mb-3">
@@ -82,21 +82,21 @@
               <h4>Payment Summary</h4>
             </div>
             <div class="card-body">
-              @if($bookingDetails['has_booking'])
-                <div class="hotel-info mb-4">
-                  <h5>{{ $bookingDetails['hotel_name'] }}</h5>
-                  <p class="text-muted">{{ $bookingDetails['room_type'] }}</p>
-                  <p><i class="bi bi-calendar"></i> Check-in: {{ $bookingDetails['check_in'] }}</p>
-                  <p><i class="bi bi-calendar"></i> Check-out: {{ $bookingDetails['check_out'] }}</p>
-                  <p><i class="bi bi-people"></i> {{ $bookingDetails['guests'] }}</p>
-                </div>
-                <hr>
+              @if(isset($bookingDetails['has_booking']) && $bookingDetails['has_booking'])
+                    <div class="hotel-info mb-4">
+                    <h5>{{ $bookingDetails['hotel_name'] }}</h5>
+                    <p class="text-muted">{{ $bookingDetails['room_type'] }}</p>
+                    <p><i class="bi bi-calendar"></i> Check-in: {{ $bookingDetails['check_in'] }}</p>
+                    <p><i class="bi bi-calendar"></i> Check-out: {{ $bookingDetails['check_out'] }}</p>
+                    <p><i class="bi bi-people"></i> {{ $bookingDetails['guests'] }}</p>
+                    </div>
+                  <hr>
               @endif
 
               <div class="price-details">
                 <div class="d-flex justify-content-between fw-bold">
-                  <span>Amount to Pay</span>
-                  <span>${{ number_format($bookingDetails['total'], 2) }}</span>
+                    <span>Amount to Pay</span>
+                    <span>${{ number_format($bookingDetails['total'] ?? 0, 2) }}</span>
                 </div>
               </div>
             </div>

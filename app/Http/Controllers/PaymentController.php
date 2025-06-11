@@ -9,21 +9,15 @@ class PaymentController extends Controller
 {
     // Show payment form
     public function index()
-    {
-        // Example booking details - you might want to pass these from a booking system
-        $bookingDetails = [
-            'hotel_name' => 'Grand Hotel',
-            'room_type' => 'Deluxe Room',
-            'check_in' => 'June 15, 2024',
-            'check_out' => 'June 20, 2024',
-            'guests' => '2 Adults, 1 Child',
-            'room_price' => 1250.00,
-            'taxes' => 125.00,
-            'total' => 1375.00
-        ];
+{
+    // Default empty booking details
+    $bookingDetails = [
+        'has_booking' => false,
+        'total' => 0
+    ];
 
-        return view('payment', compact('bookingDetails'));
-    }
+    return view('payment', compact('bookingDetails'));
+}
 
     // Handle payment submission
     public function store(Request $request)
