@@ -336,6 +336,10 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
 2. "Cancel" Button:
    - Closes the form without saving any information.
    - Useful when admins need to abort the operation or correct data before submission.
+  
+
+
+
 
 **The Challenges/Difficulties in developing the application**
 
