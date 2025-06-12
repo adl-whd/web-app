@@ -71,7 +71,7 @@
             <input type="tel" id="phone_no" name="phone_no" class="form-control" required>
         </div>
         <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Check Availability</button>
+            <button type="submit" class="btn btn-primary">Book Now</button>
         </div>
     </div>
 </form>

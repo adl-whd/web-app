@@ -12,11 +12,23 @@
 
       <!-- Filters -->
       <div class="flex space-x-4 mb-4">
-        <button class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">All room(100)</button>
-        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full">Available room(20)</button>
-        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full">Booked(80)</button>
-        <a href="{{ route('room.create') }}" class="ml-auto px-4 py-2 bg-blue-600 text-white rounded-lg">Add room</a>
-      </div>
+        <a href="{{ route('room') }}"
+        class="px-4 py-2 {{ is_null(request('status')) ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }} rounded-full">
+        All Rooms
+        </a>
+
+        <a href="{{ route('room', ['status' => 'Available']) }}"
+            class="px-4 py-2 {{ request('status') == 'Available' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }} rounded-full">
+            Available ({{ \App\Models\Room::where('status', 'Available')->count() }})
+        </a>
+
+        <a href="{{ route('room', ['status' => 'Booked']) }}"
+            class="px-4 py-2 {{ request('status') == 'Booked' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }} rounded-full">
+            Booked ({{ \App\Models\Room::where('status', 'Booked')->count() }})
+        </a>
+
+            <a href="{{ route('room.create') }}" class="ml-auto px-4 py-2 bg-blue-600 text-white rounded-lg">Add room</a>
+        </div>
 
     <!-- Room Table -->
     <div class="bg-white rounded-lg shadow overflow-x-auto">
@@ -67,6 +79,7 @@
         </tbody>
     </table>
     {{-- {{ $room->links() }} --}}
+    {{-- {{ $room->appends(['status' => request('status')])->links() }} --}}
 </div>
 @endsection
 

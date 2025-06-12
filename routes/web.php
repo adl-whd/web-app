@@ -5,11 +5,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuestController;
-<<<<<<< HEAD
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\RoomController;
-=======
->>>>>>> b7e085c20caf6ade893efd3cbe2ceeede8154d08
 
 Route::get('/', function () {
     return view('mainpage');
@@ -46,7 +43,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/guest', [GuestController::class, 'index'])->name('guest');
 Route::get('/room', [RoomController::class, 'index'])->name('room');
 
-
+Route::get('facility', [FacilityController::class, 'index'])->name('facility');
 
 Route::get('room', [RoomController::class, 'index']);
 Route::resource('room', RoomController::class);
@@ -63,3 +60,9 @@ Route::get('/room/{room}', [RoomController::class, 'show'])->name('room.show');
 Route::get('/room/{room}/edit', [RoomController::class, 'edit'])->name('room.edit');
 Route::put('/room/{room}', [RoomController::class, 'update'])->name('room.update');
 Route::delete('/room/{room}', [RoomController::class, 'destroy'])->name('room.destroy');
+
+// Guest Routes
+Route::get('/guests', [GuestController::class, 'index'])->name('guest');
+Route::post('/guests', [GuestController::class, 'store'])->name('guests.store');
+Route::put('/guests/{id}', [GuestController::class, 'update'])->name('guests.update');
+Route::delete('/guests/{id}', [GuestController::class, 'destroy'])->name('guests.destroy');

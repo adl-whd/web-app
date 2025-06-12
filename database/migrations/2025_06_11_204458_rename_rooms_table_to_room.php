@@ -7,12 +7,12 @@ use Illuminate\Database\Migrations\Migration;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::rename('rooms', 'room');
+        Schema::rename('room', 'rooms');
     }
 
     public function down(): void
     {
-        Schema::rename('room', 'rooms');
+        Schema::rename('rooms', 'room');
     }
 };
 // This migration renames the 'rooms' table to 'room'.

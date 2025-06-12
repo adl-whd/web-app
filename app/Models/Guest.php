@@ -2,15 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Guest extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'name',
-        'room_number',
-        'total_amount',
-        'status'
+        'guest_id',
+        'full_name',
+        'username',
+        'email',
+        'phone_number',
+        'password',
+        'booking_date',
+        'check_in_date',
+        'check_out_date',
+        'payment_status',
     ];
 }
-// This model represents a guest in the hotel management system, with fields for name, room number, total amount, and status.

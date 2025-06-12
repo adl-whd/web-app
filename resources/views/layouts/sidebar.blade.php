@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2">
+            <a href="{{ route('facility') }}" class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2">
                 {{-- <a href="{{ route('reservations') }}" class="flex items-center space-x-2 text-black-700 hover:text-blue-600 hover:bg-blue-200 transition rounded-lg px-4 py-2"> --}}
                 <i class="fas fa-book"></i>
                 <span>Facilities</span>

@@ -43,7 +43,7 @@
         <ul>
           <li><a href="/" class="active">Home</a></li>
           <li><a href="/rooms">Rooms & Suites</a></li>
-          <li><a href="/amenities">Amenities</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/gallery">Gallery</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/booking" class="book-now-btn">Book Now</a></li>
