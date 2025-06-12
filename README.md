@@ -127,6 +127,21 @@ payment page
 
 ![Screenshot 2025-05-22 225719](https://github.com/user-attachments/assets/f97110de-a0bb-47dd-8532-ed087f511b90)
 
+- This is the payment page displayed after a successful booking.
+- The customer is required to enter their card details, including:
+    - Name on Card
+    - Card Number
+    - Expiry Month    
+    - Expiry Year
+    - CVV
+
+- An option is available to save the card details for future payments.
+
+- After clicking the "Pay Now" button, a confirmation message will appear indicating that the payment was successful.
+
+- The customer can then click the "Done" button or the Close (✕) button to return to the main page.
+
+
 booking management page
 
 ![Screenshot 2025-05-22 224455](https://github.com/user-attachments/assets/be33b35d-0752-45ba-80b2-3e254237e3c4)
@@ -183,6 +198,12 @@ front desk customer management page
 ![Screenshot 2025-06-12 135127](https://github.com/user-attachments/assets/ee0bd369-0569-41bf-ae95-9e4b1b84df26)
 
 ![Screenshot 2025-06-12 220345](https://github.com/user-attachments/assets/73ee0800-3a56-43bb-a5fc-101e4516ede3)
+
+**The Challenges/Difficulties in developing the application**
+
+1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables.
+
+
 
 
 
