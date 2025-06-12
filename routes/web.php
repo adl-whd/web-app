@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuestController;
+<<<<<<< HEAD
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\RoomController;
+=======
+>>>>>>> b7e085c20caf6ade893efd3cbe2ceeede8154d08
 
 Route::get('/', function () {
     return view('mainpage');
@@ -22,6 +26,9 @@ Route::get('/payment/success/{id}', [PaymentController::class, 'success'])->name
 Route::get('/book', [bookingController::class, 'index'])->name('booking.index');
 Route::post('/book', [bookingController::class, 'store'])->name('booking.process');
 Route::get('/payment/{payment}', [bookingController::class, 'show'])->name('booking.show');
+
+// Facility Routes
+Route::get('facility', [FacilityController::class, 'index'])->name('facility.index');
 
 // Authenticated Routes (Jetstream)
 Route::middleware([
