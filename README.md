@@ -270,7 +270,8 @@ The admin has full control over room records and can:
 
 **The Challenges/Difficulties in developing the application**
 
-1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables. (Nasreen)
+   **Nasreen**
+1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables. 
 
    **Nur Amira Nabila**
 1. has problem connected page with sidebar. having a hard time to merge layout page with sidebar layout
