@@ -127,21 +127,6 @@ login and register page
 
 ![Screenshot 2025-05-22 225719](https://github.com/user-attachments/assets/f97110de-a0bb-47dd-8532-ed087f511b90)
 
-- This is the payment page displayed after a successful booking.
-- The customer is required to enter their card details, including:
-    - Name on Card
-    - Card Number
-    - Expiry Month    
-    - Expiry Year
-    - CVV
-
-- An option is available to save the card details for future payments.
-
-- After clicking the "Pay Now" button, a confirmation message will appear indicating that the payment was successful.
-
-- The customer can then click the "Done" button or the Close (✕) button to return to the main page.
-
-
 **booking management page**
 
 ![Screenshot 2025-05-22 224455](https://github.com/user-attachments/assets/be33b35d-0752-45ba-80b2-3e254237e3c4)
@@ -180,6 +165,20 @@ dashboard
 
 2. payment page
 ![Screenshot 2025-06-12 220045](https://github.com/user-attachments/assets/e3162cb7-d359-44b7-9a11-6b8774a396c2)
+
+- This is the payment page displayed after a successful booking.
+- The customer is required to enter their card details, including:
+    - Name on Card
+    - Card Number
+    - Expiry Month    
+    - Expiry Year
+    - CVV
+
+- An option is available to save the card details for future payments.
+
+- After clicking the "Pay Now" button, a confirmation message will appear indicating that the payment was successful.
+
+- The customer can then click the "Done" button or the Close (✕) button to return to the main page.
 
 3. dashboard
 ![Screenshot 2025-06-12 135109](https://github.com/user-attachments/assets/e7650629-003c-419a-bc16-a05d800f8282)
@@ -271,7 +270,7 @@ The admin has full control over room records and can:
 
 **The Challenges/Difficulties in developing the application**
 
-1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables.
+1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables. (Nasreen)
 
 
 
