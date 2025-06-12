@@ -224,10 +224,45 @@ Summarizes the condition of all rooms in the hotel
 A small preview section for recent guest comments
 - This helps management quickly identify and address guest concerns.
 
-5. facilities page
+4. facilities page
 ![Screenshot 2025-06-12 135115](https://github.com/user-attachments/assets/f6d92164-860f-4163-9131-19c0a4f0dc31)
 
 ![Screenshot 2025-06-12 220634](https://github.com/user-attachments/assets/b09f9ac3-11f7-4e2f-911f-bb7a36ef65bd)
+
+
+The Facilities Page allows hotel staff to manage and customize room-specific features offered to guests. This page displays an overview of available facilities for each room and enables quick editing or addition of new facilities, 
+ensuring the hotel’s offerings are always up-to-date.
+
+**Key Functionalities:**
+
+1. Display Table Overview:
+- Shows a list of rooms with their assigned Guest ID, Room Number, and key facilities such as:
+a) Prayer Room
+b) Halal Dining
+c) Family-Friendly Options
+d) Status (Active/Inactive
+
+- Facilities are indicated using ✅ (Y) and ❌ (X) as visual indicators to allow staff to instantly assess room readiness and feature availability.
+- Real-time tracking helps staff ensure proper room allocation based on guest preferences.
+
+2. + Add Facility Button:
+- Opens a form modal where staff can manually assign or update room facilities. Form fields include:
+a) Room Number
+b) Prayer Room (Yes/No)
+c) Halal Dining (Yes/No)
+d) Family Friendly (Yes/No)
+e) Status (Active/Inactive)
+
+3. Edit Button:
+- Allows staff to update the facility info for any room if changes are required.
+
+4. Delete Button:
+- Delete: Remove an entry when no longer relevant.
+
+5. Save Facility Button:
+- Saves the input locally within the current page view.
+- Changes are reflected immediately in the table, helping staff keep track of updates easily and visually.
+
 
 5. room page (add room)
 ![Screenshot 2025-06-12 135138](https://github.com/user-attachments/assets/e9c7becf-d09d-44d9-949e-27ba2db82f7f)
@@ -236,7 +271,7 @@ A small preview section for recent guest comments
 
 This Room Management Page is designed to display and manage all rooms in the hotel system. It serves as a centralized view for staff or administrators to keep track of room availability and key details.
 
-**Main Functionalities:**
+**Key Functionalities:**
 1. Room Listing
   The page lists all rooms, showing details such as:
   - Room Number
@@ -252,9 +287,9 @@ This Room Management Page is designed to display and manage all rooms in the hot
   - Booked (X): Filters and displays rooms that are currently booked.
 
 **Staff Use Case**
-  1. Staff can quickly identify which rooms are booked or available, allowing them to:
-  2. Assign rooms to guests efficiently.
-  3. Inform guests about specific room features or facilities upon request.
+1. Staff can quickly identify which rooms are booked or available, allowing them to:
+2. Assign rooms to guests efficiently.
+3. Inform guests about specific room features or facilities upon request.
 
 **Room Management**
 The admin has full control over room records and can:
@@ -263,7 +298,7 @@ The admin has full control over room records and can:
 3. Delete rooms if they are no longer in service.
 
    
-7. guest page (add guest)
+6. guest page (add guest)
 ![Screenshot 2025-06-12 135127](https://github.com/user-attachments/assets/ee0bd369-0569-41bf-ae95-9e4b1b84df26)
 **Guest Management Page – Admin View**
 The Guest Management page is a centralized interface designed for admin or staff use in managing customer information related to room bookings and reservations. It simplifies the process of storing, updating, and removing guest records, ensuring efficient data handling and smooth hotel operations.
@@ -304,15 +339,25 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
 
 **The Challenges/Difficulties in developing the application**
 
+   **Adly**
+
+   
    **Nasreen**
-1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables. 
+   1. I find the database part to be the most challenging, especially when the submitted data doesn't always get stored correctly in the phpMyAdmin tables. 
 
    **Nur Amira Nabila**
-1. has problem connected page with sidebar. having a hard time to merge layout page with sidebar layout
-2. has an error on saving the room data. but the database save the data.
+   1. has problem connected page with sidebar. having a hard time to merge layout page with sidebar layout
+   2. has an error on saving the room data. but the database save the data.
 
    **Nur Faizah Binti Omar**
-1. A key challenge in guest management is the inefficiency and inaccuracy of manually handling guest data,
+   1. A key challenge in guest management is the inefficiency and inaccuracy of manually handling guest data,
+
+   **Farah Binti Mazlan**
+   1. The toughest part for me was getting the facility data to update properly without using a real database. Since everything happens on the same page, I had to make sure the info shows up correctly in the table every time I add or edit something.
+   2. I also faced difficulty ensuring that the form selections (dropdowns) worked correctly and updated the table immediately with visual indicators (✔ or ✖) and status tags (Active/Inactive).
+   3. It was also quite tricky to make sure the form inputs were connected properly to the backend. Making sure the form doesn’t let user save unless everything’s filled in took a lot of trial and error.
+
+
 
 
 
