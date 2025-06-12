@@ -184,7 +184,48 @@ dashboard
 3. dashboard
 ![Screenshot 2025-06-12 135109](https://github.com/user-attachments/assets/e7650629-003c-419a-bc16-a05d800f8282)
 
-4. facilities page
+This Dashboard Page serves as the central overview panel for the hotel management team, allowing them to monitor operations, room occupancy, bookings, revenue, and guest feedback in real-time.
+
+🔷 Sidebar Navigation (Left Panel)
+The sidebar provides quick access to different modules in the system:
+
+Dashboard: This current summary page that gives a bird’s-eye view of the hotel’s daily operations.
+Facilities: Manages room or hotel-wide facilities (e.g. gym, pool, Wi-Fi).
+Guest: Manages guest information and records.
+Rooms: View, add, edit, or delete room details.
+
+🔹 Top Bar
+Login: Appears if a user is not logged in (might change to "Logout" if logged in).
+Create Booking Button: Allows the admin/staff to quickly initiate a new room booking process.
+
+📊 Dashboard Overview Section
+✅ System Status
+System Status: All Services Operational — Indicates the backend system is running without issues.
+
+📅 Daily Operations Summary
+1. Today’s Check-in:– Number of guests checking in today
+2. Today’s Check-out:– Number of guests checking out today.
+3. Total in Hotel:– Total current occupants across all rooms.
+4. Today’s Bookings:– New bookings made today.
+5. Available Rooms:– Number of rooms currently unoccupied and ready.
+6. Today’s Revenue:– Revenue earned for the day from bookings.
+7. Prayer Requests:– Number of prayer requests made by guests (may relate to a religious service or spiritual offering provided by the hotel).
+
+🛏️ Room Types & Pricing
+Displays types of room packages available and occupancy
+- This section helps staff monitor room demand and occupancy per room category.
+
+🧼 Room Status
+Summarizes the condition of all rooms in the hotel
+
+🏢 Floor Status
+– Indicates the current completion level of floor cleaning, inspection, or maintenance tasks.
+
+💬 Guest Feedback
+A small preview section for recent guest comments
+- This helps management quickly identify and address guest concerns.
+
+5. facilities page
 ![Screenshot 2025-06-12 135115](https://github.com/user-attachments/assets/f6d92164-860f-4163-9131-19c0a4f0dc31)
 
 ![Screenshot 2025-06-12 220634](https://github.com/user-attachments/assets/b09f9ac3-11f7-4e2f-911f-bb7a36ef65bd)
@@ -194,6 +235,35 @@ dashboard
 
 ![Screenshot 2025-06-12 220443](https://github.com/user-attachments/assets/7ceb769c-9740-4c7a-8a5d-3823a18b7776)
 
+This Room Management Page is designed to display and manage all rooms in the hotel system. It serves as a centralized view for staff or administrators to keep track of room availability and key details.
+
+**Main Functionalities:**
+1. Room Listing
+  The page lists all rooms, showing details such as:
+  - Room Number
+  - Bed Type
+  - Floor
+  - Included Facilities (e.g., AC, bathtub, TV)
+  - Availability Status (Available or Booked)
+
+2. Filtering Options
+  Users can filter rooms using the top buttons:
+  - All Rooms: Shows every room in the system.
+  - Available (X): Filters and displays only rooms that are currently unoccupied.
+  - Booked (X): Filters and displays rooms that are currently booked.
+
+**Staff Use Case**
+  1. Staff can quickly identify which rooms are booked or available, allowing them to:
+  2. Assign rooms to guests efficiently.
+  3. Inform guests about specific room features or facilities upon request.
+
+**Room Management**
+The admin has full control over room records and can:
+1. Add a new room using the “Add room” button.
+2. Edit existing room details (e.g., bed type, floor, facilities).
+3. Delete rooms if they are no longer in service.
+
+   
 7. guest page (add guest)
 ![Screenshot 2025-06-12 135127](https://github.com/user-attachments/assets/ee0bd369-0569-41bf-ae95-9e4b1b84df26)
 
