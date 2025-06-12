@@ -311,6 +311,9 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
 1. has problem connected page with sidebar. having a hard time to merge layout page with sidebar layout
 2. has an error on saving the room data. but the database save the data.
 
+   **Nur Faizah Binti Omar**
+1. A key challenge in guest management is the inefficiency and inaccuracy of manually handling guest data,
+
 
 
 
