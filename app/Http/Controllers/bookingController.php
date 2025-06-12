@@ -12,9 +12,16 @@ class bookingController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('payment');
+{
+    $bookingDetails = session('bookingDetails');
+
+    if (!$bookingDetails) {
+        return redirect()->back()->with('error', 'No booking found.');
     }
+
+    return view('payment', compact('bookingDetails'));
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -80,7 +87,8 @@ class bookingController extends Controller
         'total' => $total
     ];
 
-    return view('payment', compact('bookingDetails'));
+session(['bookingDetails' => $bookingDetails]);
+return redirect()->route('payment.index'); // point to index()
 }
 
     /**

@@ -4,17 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use App\Models\Booking; // ADD THIS at the top with your other use statements
 
 class PaymentController extends Controller
 {
     // Show payment form
-    public function index()
+
+    public function index(Request $request)
 {
-    // Default empty booking details
     $bookingDetails = [
         'has_booking' => false,
+        'id' => null,
         'total' => 0
     ];
+
+    // If booking info is passed via query or session
+    if ($request->has('booking_id')) {
+        $booking = Booking::find($request->input('booking_id'));
+
+        if ($booking) {
+            $bookingDetails = [
+                'has_booking' => true,
+                'id' => $booking->id,
+                'total' => $booking->total_price,
+                'check_in' => $booking->check_in,
+                'check_out' => $booking->check_out,
+                'guests' => $booking->guests
+            ];
+        }
+    }
 
     return view('payment', compact('bookingDetails'));
 }
@@ -30,39 +48,37 @@ class PaymentController extends Controller
         'cvv' => 'required|numeric|digits_between:3,4',
     ]);
 
-    $paymentData = [
-        'amount' => $request->input('total_amount', 0),
-        'method' => 'Credit Card',
-        'status' => 'completed',
-        'card_last_four' => substr($request->card_number, -4),
-        'first_name' => $request->input('first_name', 'Guest') // Add default or get from form
-    ];
-
-    // Only add user_id if authenticated
-    if (auth()->check()) {
-        $paymentData['user_id'] = auth()->id();
-    }
-
     try {
-        $payment = Payment::create($paymentData);
+        // 1. Create payment
+        $payment = Payment::create([
+            'amount' => $request->input('total_amount', 1375.00),
+            'method' => 'Credit Card',
+            'card_last_four' => substr($request->card_number, -4),
+            'status' => 'completed',
+        ]);
 
-        if ($request->ajax()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Payment successful!',
+        // 2. Link payment to booking
+        if ($request->input('has_booking') == 1 && $request->has('booking_id')) {
+            $bookingId = $request->input('booking_id');
+            Booking::where('id', $bookingId)->update([
                 'payment_id' => $payment->id
             ]);
         }
 
-        return redirect()->route('payment.success', $payment->id);
-    } catch (\Exception $e) {
+        // 3. Response (AJAX or redirect)
         if ($request->ajax()) {
             return response()->json([
-                'success' => false,
-                'message' => 'Payment failed: ' . $e->getMessage()
-            ], 500);
+                'success' => true,
+                'message' => 'Payment successful!',
+                'payment_id' => $payment->id,
+                'has_booking' => $request->input('has_booking') == 1
+            ]);
         }
-        return back()->with('error', 'Payment failed: ' . $e->getMessage());
+
+        return redirect()->route('payment.success', $payment->id);
+
+    } catch (\Exception $e) {
+        return back()->with('error', 'Error: ' . $e->getMessage());
     }
 }
 
@@ -70,6 +86,8 @@ class PaymentController extends Controller
     public function success($id)
     {
         $payment = Payment::findOrFail($id);
-        return view('payment.success', compact('payment'));
+        return view('payment.success', compact(''));
     }
+
+
 }

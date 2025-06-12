@@ -5,13 +5,16 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\bookingController;
+use App\Http\Controllers\RoomController;
 
 Route::get('/', function () {
     return view('mainpage');
 });
 
 // Payment Routes
-Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+
+Route::get('/payment', [BookingController::class, 'index'])->name('payment.index');
+//Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
 Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
 Route::get('/payment/success/{id}', [PaymentController::class, 'success'])->name('payment.success');
 
@@ -34,5 +37,22 @@ Route::middleware([
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/guest', [GuestController::class, 'index'])->name('guest');
+Route::get('/room', [RoomController::class, 'index'])->name('room');
 
 
+
+Route::get('room', [RoomController::class, 'index']);
+Route::resource('room', RoomController::class);
+
+// Route::get('students' , [StudentsController::class, 'index']);
+// Route::resource('addstudent' ,StudentsController::class);
+Route::get('/room', [RoomController::class, 'index'])->name('room');
+// Route::get('/room/{id}', [RoomController::class, 'show'])->name('room');
+
+Route::get('/room', [RoomController::class, 'index'])->name('room');
+Route::get('/room/create', [RoomController::class, 'create'])->name('room.create');
+Route::post('/room', [RoomController::class, 'store'])->name('room.store');
+Route::get('/room/{room}', [RoomController::class, 'show'])->name('room.show');
+Route::get('/room/{room}/edit', [RoomController::class, 'edit'])->name('room.edit');
+Route::put('/room/{room}', [RoomController::class, 'update'])->name('room.update');
+Route::delete('/room/{room}', [RoomController::class, 'destroy'])->name('room.destroy');

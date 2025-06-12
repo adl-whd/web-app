@@ -124,5 +124,7 @@
 
   <!-- Flatpickr JS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  @stack('scripts')
+
 </body>
 </html>
