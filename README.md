@@ -265,6 +265,20 @@ The admin has full control over room records and can:
    
 7. guest page (add guest)
 ![Screenshot 2025-06-12 135127](https://github.com/user-attachments/assets/ee0bd369-0569-41bf-ae95-9e4b1b84df26)
+**Guest Management Page – Admin View**
+The Guest Management page is a centralized interface designed for admin or staff use in managing customer information related to room bookings and reservations. It simplifies the process of storing, updating, and removing guest records, ensuring efficient data handling and smooth hotel operations.
+
+**Key Functionalities:**
+1. "+ Add New Guest" Button:
+   - Allows staff to manually add new guest records into the system.
+
+2. "Edit" Button:
+   - Enables admins to edit guest information.
+   - Useful for handling last-minute changes or correcting data entry errors.
+
+3. "Delete" Button:
+   - Allows staff to remove guest records from the system completely.
+   - Ensures data cleanliness and prevents clutter in the booking system
 
 ![Screenshot 2025-06-12 220345](https://github.com/user-attachments/assets/73ee0800-3a56-43bb-a5fc-101e4516ede3)
 
