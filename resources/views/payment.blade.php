@@ -139,56 +139,53 @@
 @push('scripts')
 <script>
 $(document).ready(function() {
-   $('#payment-form').on('submit', function(e) {
-    e.preventDefault();
+    $('#payment-form').on('submit', function(e) {
+        e.preventDefault();
 
-    const $form = $(this); // ✅ Store the form reference
+        const $form = $(this);
+        const submitBtn = $('#pay-button');
 
-    $('#pay-button').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...').prop('disabled', true);
+        submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...').prop('disabled', true);
 
-    $.ajax({
-        url: $form.attr('action'),
-        method: 'POST',
-        data: $form.serialize(),
-       success: function(response) {
-    $('#transaction-id').text(response.payment_id);
+        // Use Axios instead of jQuery AJAX
+        axios.post($form.attr('action'), $form.serialize())
+            .then(function(response) {
+                // Success handling
+                $('#transaction-id').text(response.data.payment_id);
 
-    if (response.has_booking) {
-        $('#booking-info').html(`
-            <div class="alert alert-info mt-3">
-                <p class="mb-1"><strong>Booking Details:</strong></p>
-                <p class="mb-1">Hotel: ${$form.find('input[name="hotel_name"]').val()}</p>
-                <p class="mb-1">Room Type: ${$form.find('input[name="room_type"]').val()}</p>
-            </div>
-        `);
-    } else {
-        $('#booking-info').html(`
-            <div class="alert alert-info mt-3">
-                <p>No booking associated with this payment.</p>
-            </div>
-        `);
-    }
+                if (response.data.has_booking) {
+                    $('#booking-info').html(`
+                        <div class="alert alert-info mt-3">
+                            <p class="mb-1"><strong>Booking Details:</strong></p>
+                            <p class="mb-1">Hotel: ${$form.find('input[name="hotel_name"]').val()}</p>
+                            <p class="mb-1">Room Type: ${$form.find('input[name="room_type"]').val()}</p>
+                        </div>
+                    `);
+                }
 
-    const modalElement = document.getElementById('successModal');
-    const modal = new bootstrap.Modal(modalElement);
-    modal.show();
+                const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                modal.show();
 
-    // Redirect after modal is closed
-    $(modalElement).on('hidden.bs.modal', function () {
-        window.location.href = '/'; 
+                // Redirect after modal is closed
+                $('#successModal').on('hidden.bs.modal', function() {
+                    window.location.href = '/';
+                });
+
+                $form[0].reset();
+                submitBtn.html('Pay Now').prop('disabled', false);
+            })
+            .catch(function(error) {
+                // Error handling
+                let errorMessage = 'Payment failed. Please try again.';
+
+                if (error.response && error.response.data && error.response.data.message) {
+                    errorMessage = error.response.data.message;
+                }
+
+                alert(errorMessage);
+                submitBtn.html('Pay Now').prop('disabled', false);
+            });
     });
-
-    $form[0].reset();
-    $('#pay-button').html('Pay Now').prop('disabled', false);
-}
-        ,
-        error: function(xhr) {
-            alert('Payment failed: ' + (xhr.responseJSON?.message || 'Please check your details and try again.'));
-            $('#pay-button').html('Pay Now').prop('disabled', false);
-        }
-    });
-});
-
 });
 </script>
 @endpush

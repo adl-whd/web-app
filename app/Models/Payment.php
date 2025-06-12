@@ -10,11 +10,15 @@ class Payment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'amount',
-        'method',
-        'status',
-    ];
+    //'transaction_ref',
+    'amount',
+    'method',
+    'card_name',
+    'card_last_four',
+    'expiry_month',
+    'expiry_year',
+    'status'
+];
     public function booking()
 {
     return $this->hasOne(Booking::class);
