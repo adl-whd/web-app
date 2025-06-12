@@ -21,27 +21,31 @@ class PaymentController extends Controller
 
     // Handle payment submission
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'card_name' => 'required|string|max:255',
-            'card_number' => 'required|string|size:16',
-            'expiry_month' => 'required|numeric|between:1,12',
-            'expiry_year' => 'required|numeric|min:' . date('Y'),
-            'cvv' => 'required|numeric|digits_between:3,4',
-        ]);
+{
+    $validated = $request->validate([
+        'card_name' => 'required|string|max:255',
+        'card_number' => 'required|string|size:16',
+        'expiry_month' => 'required|numeric|between:1,12',
+        'expiry_year' => 'required|numeric|min:' . date('Y'),
+        'cvv' => 'required|numeric|digits_between:3,4',
+    ]);
 
-        // In a real application, you would process the payment here
-        // For demo purposes, we'll just create a record
+    $paymentData = [
+        'amount' => $request->input('total_amount', 0),
+        'method' => 'Credit Card',
+        'status' => 'completed',
+        'card_last_four' => substr($request->card_number, -4),
+        'first_name' => $request->input('first_name', 'Guest') // Add default or get from form
+    ];
 
-        $payment = Payment::create([
-            'user_id' => auth()->id() ?? null, // null if not authenticated
-            'amount' => $request->input('total_amount', 1375.00),
-            'method' => 'Credit Card',
-            'card_last_four' => substr($request->card_number, -4),
-            'status' => 'completed',
-        ]);
+    // Only add user_id if authenticated
+    if (auth()->check()) {
+        $paymentData['user_id'] = auth()->id();
+    }
 
-        // Return JSON response for AJAX handling
+    try {
+        $payment = Payment::create($paymentData);
+
         if ($request->ajax()) {
             return response()->json([
                 'success' => true,
@@ -51,7 +55,16 @@ class PaymentController extends Controller
         }
 
         return redirect()->route('payment.success', $payment->id);
+    } catch (\Exception $e) {
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Payment failed: ' . $e->getMessage()
+            ], 500);
+        }
+        return back()->with('error', 'Payment failed: ' . $e->getMessage());
     }
+}
 
     // Show success page
     public function success($id)

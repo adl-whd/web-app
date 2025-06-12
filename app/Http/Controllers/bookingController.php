@@ -66,7 +66,6 @@ class bookingController extends Controller
     $tax = $subtotal * 0.1; // 10% tax
     $total = $subtotal + $tax;
 
-    // Prepare booking details for payment page
     $bookingDetails = [
         'has_booking' => true,
         'hotel_name' => 'Swift Retreat',

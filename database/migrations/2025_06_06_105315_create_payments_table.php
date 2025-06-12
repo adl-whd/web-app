@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->string('first_name')->nullable();
+            $table->string('amount', 15);
+            $table->string('method', 10);
+            $table->string('status', 20);
+            $table->string('card_last_four', 20);
             $table->timestamps();
         });
     }
@@ -23,5 +27,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('payments');
+        $table->dropColumn('first_name');
     }
 };

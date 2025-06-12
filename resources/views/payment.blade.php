@@ -23,6 +23,7 @@
                 @csrf
                 <input type="hidden" name="total_amount" value="{{ $bookingDetails['total'] }}">
                 <input type="hidden" name="has_booking" value="{{ $bookingDetails['has_booking'] ? 1 : 0 }}">
+                <input type="hidden" name="first_name" value="{{ $bookingDetails['first_name'] ?? 'Guest' }}">
 
                 @if(isset($bookingDetails['has_booking']) && $bookingDetails['has_booking'])
                     <input type="hidden" name="hotel_name" value="{{ $bookingDetails['hotel_name'] }}">
