@@ -10,103 +10,32 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            display: flex;
-            min-height: 100vh;
+            background-color: #f5f5f5;
+            min-height: 200vh;
         }
 
         .sidebar {
-            width: 250px;
-            background: #2c3e50;
-            color: white;
-            min-height: 100vh;
-            order: 1;
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 1px solid #34495e;
-            text-align: center;
-        }
-
-        .sidebar-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .sidebar-subtitle {
-            font-size: 12px;
-            color: #bdc3c7;
-            margin: 5px 0 0 0;
-        }
-
-        .sidebar-menu {
-            padding: 20px 0;
-        }
-        .menu-item {
-            padding: 12px 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .menu-item:hover {
-            background: #34495e;
-        }
-
-        .menu-item.active {
-            background: #34495e;
-            border-left-color: #3498db;
+            position: fixed;
+            top: 4px;
+            left: 0;
+            width: 150px;
+            height: calc(100vh - 80px);
+            background: white;
+            border-right: 1px solid #e0e0e0;
+            padding-top: 10px;
         }
 
         .container {
-            flex: 1;
-            background: white;
-            min-height: 100vh;
-            order: 2;
-        }
-
-        .header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-box {
-            width: 40px;
-            height: 40px;
-            background: #3498db;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .system-name {
-            font-size: 14px;
-            color: #bdc3c7;
-        }
-
-        .main-title {
-            font-size: 24px;
-            margin: 0;
+            margin-left: 250px;
+            margin-top: 30px;
+            background: #fcf9f9;
+            min-height: calc(100vh - 80px);
+            width: calc(100% - 200px);
         }
 
         .controls {
             padding: 20px;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid #e2e4e5;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -129,16 +58,16 @@
 
         .facility-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
             margin: 0;
         }
 
         .facility-table th {
-            background: #34495e;
-            color: white;
+            background: #d2d4d6;
+            color: rgb(159, 153, 153);
             padding: 15px;
             text-align: left;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .facility-table td {
@@ -147,12 +76,12 @@
         }
 
         .facility-table tr:hover {
-            background: #f8f9fa;
+            background: #dbdcdd;
         }
 
         .status-badge {
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 40px;
             font-size: 12px;
             font-weight: bold;
         }
@@ -179,7 +108,7 @@
 
         .action-buttons {
             display: flex;
-            gap: 5px;
+            gap: 10px;
         }
 
         .btn {
@@ -242,7 +171,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid #65787d;
         }
 
         .modal-title {
@@ -323,122 +252,119 @@
         }
 
         .btn-primary:hover {
-            background:rgb(42, 54, 47);
+            background: rgb(42, 54, 47);
         }
 
         .btn-secondary:hover {
             background: #7f8c8d;
         }
+
+        .menu-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background: #f8f9fa;
+        }
+
+        .menu-item.active {
+            background: #e3f2fd;
+            color: #1565c0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
     <div class="sidebar">
-        <div class="sidebar-header">
-            <h3 class="sidebar-title">Swift Retreat</h3>
-            <p class="sidebar-subtitle">Hotel Management</p>
-        </div>
-        <div class="sidebar-menu">
-            <div class="menu-item">Dashboard</div>
-            <div class="menu-item">Reservations</div>
-            <div class="menu-item">Guest</div>
-            <div class="menu-item">Rooms</div>
-            <div class="menu-item">Staff</div>
-            <div class="menu-item">Rate</div>
-            <div class="menu-item active">Setting</div>
-        </div>
+        <div class="menu-item active">Dashboard</div>
+        <div class="menu-item">Facilities</div>
+        <div class="menu-item">Guest</div>
+        <div class="menu-item">Rooms</div>
     </div>
 
     <div class="container">
-
-        <!-- Header Section -->
-        <div class="header">
-            <div class="logo">
-                <div>
-                    <div class="main-title">Facility Management</div>
-                    <div class="system-name">Hotel Management System</div>
-                </div>
+        <div class="main-content">
+            <!-- Controls Section -->
+            <div class="controls">
+                <h2 style="margin: 0; color: #2c3e50;">Manage Hotel Facilities</h2>
+                <button class="add-facility-btn" id="addFacilityBtn">+ Add Facility</button>
             </div>
-        </div>
 
-        <!-- Controls Section -->
-        <div class="controls">
-            <h2 style="margin: 0; color: #2c3e50;">Manage Hotel Facilities</h2>
-            <button class="add-facility-btn" id="addFacilityBtn">+ Add Facility</button>
+            <!-- Facility Table -->
+            <table class="facility-table">
+                <thead>
+                    <tr>
+                        <th>Guest ID</th>
+                        <th>Room Number</th>
+                        <th>Prayer Room</th>
+                        <th>Halal Dining</th>
+                        <th>Family Friendly</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="facilityTableBody">
+                    <tr data-id="1">
+                        <td>#001</td>
+                        <td>101</td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="status-badge status-active">Active</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit" onclick="editFacility(1)">Edit</button>
+                                <button class="btn btn-delete" onclick="deleteFacility(1)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="2">
+                        <td>#002</td>
+                        <td>102</td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator no">X</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="status-badge status-active">Active</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit" onclick="editFacility(2)">Edit</button>
+                                <button class="btn btn-delete" onclick="deleteFacility(2)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="3">
+                        <td>#003</td>
+                        <td>201</td>
+                        <td><span class="facility-indicator no">X</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator no">X</span></td>
+                        <td><span class="status-badge status-inactive">Inactive</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit" onclick="editFacility(3)">Edit</button>
+                                <button class="btn btn-delete" onclick="deleteFacility(3)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="4">
+                        <td>#004</td>
+                        <td>202</td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="facility-indicator">Y</span></td>
+                        <td><span class="status-badge status-active">Active</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit" onclick="editFacility(4)">Edit</button>
+                                <button class="btn btn-delete" onclick="deleteFacility(4)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <!-- Facility Table -->
-        <table class="facility-table">
-            <thead>
-                <tr>
-                    <th>Guest ID</th>
-                    <th>Room Number</th>
-                    <th>Prayer Room</th>
-                    <th>Halal Dining</th>
-                    <th>Family Friendly</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="facilityTableBody">
-                <tr data-id="1">
-                    <td>#001</td>
-                    <td>101</td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="btn btn-edit" onclick="editFacility(1)">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteFacility(1)">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-id="2">
-                    <td>#002</td>
-                    <td>102</td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator no">X</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="btn btn-edit" onclick="editFacility(2)">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteFacility(2)">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-id="3">
-                    <td>#003</td>
-                    <td>201</td>
-                    <td><span class="facility-indicator no">X</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator no">X</span></td>
-                    <td><span class="status-badge status-inactive">Inactive</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="btn btn-edit" onclick="editFacility(3)">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteFacility(3)">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-id="4">
-                    <td>#004</td>
-                    <td>202</td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="facility-indicator">Y</span></td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="btn btn-edit" onclick="editFacility(4)">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteFacility(4)">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- Modal for Add/Edit Facility -->
@@ -500,143 +426,166 @@
     </div>
 
     <script>
-        let facilityData = [
-            { id: 1, facilityId: '#001', roomNumber: '101', prayerRoom: 'Y', halalDining: 'Y', familyFriendly: 'Y', status: 'active' },
-            { id: 2, facilityId: '#002', roomNumber: '102', prayerRoom: 'Y', halalDining: 'X', familyFriendly: 'Y', status: 'active' },
-            { id: 3, facilityId: '#003', roomNumber: '201', prayerRoom: 'X', halalDining: 'Y', familyFriendly: 'X', status: 'inactive' },
-            { id: 4, facilityId: '#004', roomNumber: '202', prayerRoom: 'Y', halalDining: 'Y', familyFriendly: 'Y', status: 'active' }
-        ];
+        // Global variables
+        let currentEditId = null;
+        let facilityCounter = 5; // Start from 5 since we have 4 existing records
 
-        let editingId = null;
-        let nextId = 5;
+        // Modal functionality
+        const modal = document.getElementById('facilityModal');
+        const addBtn = document.getElementById('addFacilityBtn');
+        const tableBody = document.getElementById('facilityTableBody');
 
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add event listener for Add Facility button
-            document.getElementById('addFacilityBtn').addEventListener('click', showAddForm);
-
-            // Add event listener for form submission
-            document.getElementById('facilityForm').addEventListener('submit', handleFormSubmit);
-
-            // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
-                const modal = document.getElementById('facilityModal');
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-        });
-
-        function showAddForm() {
-            editingId = null;
+        // Add facility button click
+        addBtn.addEventListener('click', function() {
+            currentEditId = null;
             document.getElementById('modalTitle').textContent = 'Add New Facility';
             document.getElementById('facilityForm').reset();
-            document.getElementById('facilityModal').style.display = 'block';
+            modal.style.display = 'block';
+        });
+
+        // Close modal function
+        function closeModal() {
+            modal.style.display = 'none';
+            currentEditId = null;
         }
 
+        // Edit facility function
         function editFacility(id) {
-            editingId = id;
-            const facility = facilityData.find(f => f.id === id);
+            currentEditId = id;
+            document.getElementById('modalTitle').textContent = 'Edit Facility';
 
-            if (facility) {
-                document.getElementById('modalTitle').textContent = 'Edit Facility';
-                document.getElementById('roomNumber').value = facility.roomNumber;
-                document.getElementById('prayerRoom').value = facility.prayerRoom;
-                document.getElementById('halalDining').value = facility.halalDining;
-                document.getElementById('familyFriendly').value = facility.familyFriendly;
-                document.getElementById('facilityStatus').value = facility.status;
-                document.getElementById('facilityModal').style.display = 'block';
+            // Find the row with the matching ID
+            const row = document.querySelector(`tr[data-id="${id}"]`);
+            if (row) {
+                const cells = row.cells;
+
+                // Populate form fields with existing data
+                document.getElementById('roomNumber').value = cells[1].textContent;
+                document.getElementById('prayerRoom').value = cells[2].querySelector('.facility-indicator').textContent;
+                document.getElementById('halalDining').value = cells[3].querySelector('.facility-indicator').textContent;
+                document.getElementById('familyFriendly').value = cells[4].querySelector('.facility-indicator').textContent;
+
+                // Set status
+                const statusText = cells[5].querySelector('.status-badge').textContent.toLowerCase();
+                document.getElementById('facilityStatus').value = statusText;
             }
+
+            modal.style.display = 'block';
         }
 
+        // Delete facility function
         function deleteFacility(id) {
             if (confirm('Are you sure you want to delete this facility?')) {
-                facilityData = facilityData.filter(f => f.id !== id);
-                renderTable();
+                const row = document.querySelector(`tr[data-id="${id}"]`);
+                if (row) {
+                    row.remove();
+                    alert('Facility deleted successfully!');
+                }
             }
         }
 
-        function closeModal() {
-            document.getElementById('facilityModal').style.display = 'none';
-            editingId = null;
-        }
+        // Create new table row
+        function createTableRow(id, guestId, roomNumber, prayerRoom, halalDining, familyFriendly, status) {
+            const statusClass = status === 'active' ? 'status-active' : 'status-inactive';
+            const statusText = status.charAt(0).toUpperCase() + status.slice(1);
 
-        function renderTable() {
-            const tbody = document.getElementById('facilityTableBody');
-            tbody.innerHTML = '';
-
-            facilityData.forEach(facility => {
-                const row = document.createElement('tr');
-                row.setAttribute('data-id', facility.id);
-
-                const statusClass = facility.status === 'active' ? 'status-active' : 'status-inactive';
-                const statusText = facility.status === 'active' ? 'Active' : 'Inactive';
-
-                row.innerHTML = `
-                    <td>${facility.facilityId}</td>
-                    <td>${facility.roomNumber}</td>
-                    <td><span class="facility-indicator ${facility.prayerRoom === 'X' ? 'no' : ''}">${facility.prayerRoom}</span></td>
-                    <td><span class="facility-indicator ${facility.halalDining === 'X' ? 'no' : ''}">${facility.halalDining}</span></td>
-                    <td><span class="facility-indicator ${facility.familyFriendly === 'X' ? 'no' : ''}">${facility.familyFriendly}</span></td>
+            return `
+                <tr data-id="${id}">
+                    <td>${guestId}</td>
+                    <td>${roomNumber}</td>
+                    <td><span class="facility-indicator ${prayerRoom === 'X' ? 'no' : ''}">${prayerRoom}</span></td>
+                    <td><span class="facility-indicator ${halalDining === 'X' ? 'no' : ''}">${halalDining}</span></td>
+                    <td><span class="facility-indicator ${familyFriendly === 'X' ? 'no' : ''}">${familyFriendly}</span></td>
                     <td><span class="status-badge ${statusClass}">${statusText}</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn btn-edit" onclick="editFacility(${facility.id})">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteFacility(${facility.id})">Delete</button>
+                            <button class="btn btn-edit" onclick="editFacility(${id})">Edit</button>
+                            <button class="btn btn-delete" onclick="deleteFacility(${id})">Delete</button>
                         </div>
                     </td>
-                `;
-
-                tbody.appendChild(row);
-            });
+                </tr>
+            `;
         }
 
-        function handleFormSubmit(e) {
+        // Form submission
+        document.getElementById('facilityForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // Get form values
             const roomNumber = document.getElementById('roomNumber').value;
             const prayerRoom = document.getElementById('prayerRoom').value;
             const halalDining = document.getElementById('halalDining').value;
             const familyFriendly = document.getElementById('familyFriendly').value;
             const status = document.getElementById('facilityStatus').value;
 
-            if (editingId) {
-                // Update existing facility
-                const facilityIndex = facilityData.findIndex(f => f.id === editingId);
-                if (facilityIndex !== -1) {
-                    facilityData[facilityIndex] = {
-                        ...facilityData[facilityIndex],
-                        roomNumber,
-                        prayerRoom,
-                        halalDining,
-                        familyFriendly,
-                        status
-                    };
+            if (currentEditId) {
+                // Edit existing facility
+                const row = document.querySelector(`tr[data-id="${currentEditId}"]`);
+                if (row) {
+                    const cells = row.cells;
+
+                    // Update the row data
+                    cells[1].textContent = roomNumber;
+                    cells[2].innerHTML = `<span class="facility-indicator ${prayerRoom === 'X' ? 'no' : ''}">${prayerRoom}</span>`;
+                    cells[3].innerHTML = `<span class="facility-indicator ${halalDining === 'X' ? 'no' : ''}">${halalDining}</span>`;
+                    cells[4].innerHTML = `<span class="facility-indicator ${familyFriendly === 'X' ? 'no' : ''}">${familyFriendly}</span>`;
+
+                    const statusClass = status === 'active' ? 'status-active' : 'status-inactive';
+                    const statusText = status.charAt(0).toUpperCase() + status.slice(1);
+                    cells[5].innerHTML = `<span class="status-badge ${statusClass}">${statusText}</span>`;
+
+                    alert('Facility updated successfully!');
                 }
             } else {
                 // Add new facility
-                const newFacility = {
-                    id: nextId++,
-                    facilityId: `#${String(nextId - 1).padStart(3, '0')}`,
-                    roomNumber,
-                    prayerRoom,
-                    halalDining,
-                    familyFriendly,
-                    status
-                };
-                facilityData.push(newFacility);
+                const guestId = `#${String(facilityCounter).padStart(3, '0')}`;
+                const newRow = createTableRow(facilityCounter, guestId, roomNumber, prayerRoom, halalDining, familyFriendly, status);
+
+                tableBody.insertAdjacentHTML('beforeend', newRow);
+                facilityCounter++;
+
+                alert('Facility added successfully!');
             }
 
-            renderTable();
             closeModal();
-        }
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        // Initialize - Add click events to existing buttons (in case they don't work)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure all existing edit and delete buttons work
+            const editButtons = document.querySelectorAll('.btn-edit');
+            const deleteButtons = document.querySelectorAll('.btn-delete');
+
+            editButtons.forEach(button => {
+                if (!button.onclick) {
+                    const row = button.closest('tr');
+                    const id = row.getAttribute('data-id');
+                    button.addEventListener('click', () => editFacility(parseInt(id)));
+                }
+            });
+
+            deleteButtons.forEach(button => {
+                if (!button.onclick) {
+                    const row = button.closest('tr');
+                    const id = row.getAttribute('data-id');
+                    button.addEventListener('click', () => deleteFacility(parseInt(id)));
+                }
+            });
+        });
     </script>
-
-
-                <!-- Pagination -->
-                <div class="flex justify-end mt-4">
-                </div>
-            </div>
-        </div>
 </body>
 </html>

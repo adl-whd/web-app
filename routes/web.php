@@ -6,7 +6,6 @@ use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuestController;
 
-// Public Routes
 Route::get('/', function () {
     return view('facility');
 });
@@ -17,10 +16,7 @@ Route::post('/process-payment', [PaymentController::class, 'store'])->name('paym
 Route::get('/payment/{payment}', [PaymentController::class, 'show'])->name('payment.show');
 
 // Facility Routes
-Route::get('/facility', [FacilityController::class, 'index'])->name('facility');
-
-// Guest Routes
-Route::get('/guest', [GuestController::class, 'index'])->name('guest');
+Route::get('facility', [FacilityController::class, 'index'])->name('facility');
 
 // Authenticated Routes (Jetstream)
 Route::middleware([
@@ -28,6 +24,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    // Use either the closure OR the controller, not both
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/guest', [GuestController::class, 'index'])->name('guest');
