@@ -281,6 +281,26 @@ The Guest Management page is a centralized interface designed for admin or staff
    - Ensures data cleanliness and prevents clutter in the booking system
 
 ![Screenshot 2025-06-12 220345](https://github.com/user-attachments/assets/73ee0800-3a56-43bb-a5fc-101e4516ede3)
+**Add New Guest – Form Interface**
+This form appears when the “+ Add New Guest” button is clicked on the Guest Management page. It allows admin or staff to input and register new guest details into the system as part of the reservation process. This form is essential for capturing complete guest information to ensure a smooth check-in experience.
+
+**Key Functionalities:**
+1. "Save" Button:
+   - Staff can fill in and submit the guest's information, including:
+     - Full Name
+     - Username
+     - Email Address
+     - Phone Number
+     - Password
+     - Booking Date
+     - Check-In Date
+     - Check-Out Date
+     - Payment Status (dropdown with options: Paid, Pending, Cancelled)
+   - All submitted data is seamlessly stored in the connected MySQL database via phpMyAdmin, ensuring real-time data integration.
+
+2. "Cancel" Button:
+   - Closes the form without saving any information.
+   - Useful when admins need to abort the operation or correct data before submission.
 
 **The Challenges/Difficulties in developing the application**
 
