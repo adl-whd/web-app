@@ -14,6 +14,20 @@ class RoomController extends Controller
         return view('room', ['room' => $room]);
 
 
+    {
+        $status = $request->query('status');
+
+        // Filter rooms by status if status is provided
+        $query = Room::query();
+
+        if ($status) {
+            $query->where('status', $status);
+        }
+
+        $rooms = $query->paginate(10); // paginate results
+
+        return view('rooms', compact('room', 'status'));
+    }
 
     }
 
@@ -70,7 +84,7 @@ class RoomController extends Controller
 
         $room->update($request->all());
         return redirect()->route('room')->with('success', 'Room updated successfully.');
-        
+
     }
 
     public function destroy(Room $room)
