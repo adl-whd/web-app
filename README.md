@@ -162,8 +162,18 @@ dashboard
 **The actual system**
 1. mainpage
 ![Screenshot 2025-06-12 135059](https://github.com/user-attachments/assets/29b7df80-1508-4aa8-a39c-cadc0eba71cc)
+- This is the actual mainpage that houses the booking feature.
+- The customer will have to fill in details regarding their stay in a simple form that includes:
+    - First name,
+    - phone number,
+    - check-in date,
+    - check-out date,
+    - type of room,
+    - and number of adults and childrens that will be staying.
+- Other things that are available in the page is pictures of the rooms, customers' reviews, contact info, and many more.
+- Once the customer has fill in the form and clicked the "Book Now" button, they will be redirected to the payment page.
 
-2. payment page
+3. payment page
 ![Screenshot 2025-06-12 220045](https://github.com/user-attachments/assets/e3162cb7-d359-44b7-9a11-6b8774a396c2)
 
 - This is the payment page displayed after a successful booking.
