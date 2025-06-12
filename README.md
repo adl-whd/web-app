@@ -157,6 +157,37 @@ front desk customer management page
 ![Screenshot 2025-05-22 225145](https://github.com/user-attachments/assets/6ba18fe2-4d92-46b6-8daf-a2be14f9c23e)
 
 
+**Report continuation**
+
+**The actual system**
+1. mainpage
+![Screenshot 2025-06-12 135059](https://github.com/user-attachments/assets/29b7df80-1508-4aa8-a39c-cadc0eba71cc)
+
+2. payment page
+![Screenshot 2025-06-12 220045](https://github.com/user-attachments/assets/e3162cb7-d359-44b7-9a11-6b8774a396c2)
+
+3. dashboard
+![Screenshot 2025-06-12 135109](https://github.com/user-attachments/assets/e7650629-003c-419a-bc16-a05d800f8282)
+
+4. facilities page
+![Screenshot 2025-06-12 135115](https://github.com/user-attachments/assets/f6d92164-860f-4163-9131-19c0a4f0dc31)
+
+![Screenshot 2025-06-12 220634](https://github.com/user-attachments/assets/b09f9ac3-11f7-4e2f-911f-bb7a36ef65bd)
+
+5. room page (add room)
+![Screenshot 2025-06-12 135138](https://github.com/user-attachments/assets/e9c7becf-d09d-44d9-949e-27ba2db82f7f)
+
+![Screenshot 2025-06-12 220443](https://github.com/user-attachments/assets/7ceb769c-9740-4c7a-8a5d-3823a18b7776)
+
+7. guest page (add guest)
+![Screenshot 2025-06-12 135127](https://github.com/user-attachments/assets/ee0bd369-0569-41bf-ae95-9e4b1b84df26)
+
+![Screenshot 2025-06-12 220345](https://github.com/user-attachments/assets/73ee0800-3a56-43bb-a5fc-101e4516ede3)
+
+
+
+
+
 
 
 
