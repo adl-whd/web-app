@@ -339,8 +339,6 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
   
 
 
-
-
 **The Challenges/Difficulties in developing the application**
 
    **Adly**
@@ -357,9 +355,9 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
    1. A key challenge in guest management is the inefficiency and inaccuracy of manually handling guest data,
 
    **Farah Binti Mazlan**
-   1. The toughest part for me was getting the facility data to update properly without using a real database. Since everything happens on the same page, I had to make sure the info shows up correctly in the table every time I add or edit something.
+   1. Getting the facility data to update properly without using a real database. Since everything happens on the same page, to make sure the info shows up correctly in the table every time I add or edit something giving me a hard time.
    2. I also faced difficulty ensuring that the form selections (dropdowns) worked correctly and updated the table immediately with visual indicators (✅ or ❌) and status tags (Active/Inactive).
-   3. It was also quite tricky to make sure the form inputs were connected properly to the backend. Making sure the form doesn’t let user save unless everything’s filled in took a lot of trial and error.
+   3. To make sure the form inputs were connected properly to the backend. Then, making sure the form doesn’t let user save unless everything’s filled in took a lot of trial and error.
 
 
 
