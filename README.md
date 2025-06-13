@@ -352,6 +352,8 @@ This form appears when the “+ Add New Guest” button is clicked on the Guest 
 **The Challenges/Difficulties in developing the application**
 
    **Adly**
+   1. Compiling the whole system and merging features from my groupmates is quite confusing as this is the first time im using Github repository as a collaborative work.
+   2. I have difficulties trying to store data in the database cause sometimes the button is not responsive as if i did not do the proper routing.
 
    
    **Nasreen**
